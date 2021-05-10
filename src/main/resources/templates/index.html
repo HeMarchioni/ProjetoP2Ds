@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="bg-secondary">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/}">Home <span class="sr-only">(Página atual)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Catálogo</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Carrinhos</a>
+                  </li>
+                </ul>
+              </div>
+              <a class="navbar-brand" href="#">TechTrade</a>
+          </nav>
+
+<div class="container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="img/img3.jpg" alt="Primeiro Slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h5 class="text-dark fonte-carrossel"></h5>
+                <p class="text-dark fonte-carrossel">Nossos produtos são de altíssima qualidade e com preços que cabem no seu bolso.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="img/img1.png" alt="Segundo Slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h5 class="text-dark fonte-carrossel">Ampla comunidade</h5>
+                <p class="text-dark fonte-carrossel">Acesse o nosso blog e intereja com outras pessoas!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="img/img2.png" alt="Terceiro Slide">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Próximo</span>
+        </a>
+      </div>
+
+      <h2 class="bg-dark m-auto">CATEGORIAS</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-2 col-md-6 col-lg-4 img-c">
+            <img class="img-categoria justify-content-center" src="img/categorias/fonte.png" alt="">
+          </div>
+          <div class="col-xs-2 col-md-6 col-lg-4 img-c">
+            <img class="img-categoria justify-content-center" src="img/categorias/hd.png" alt="">
+          </div>
+          <div class="col-xs-2 col-md-6 col-lg-4 img-c">
+            <a th:href="@{/placa}"><img class="img-categoria justify-content-center" src="img/categorias/mb.png" alt=""></a>
+          </div>
+          <div class="col-xs-2 col-md-6 col-lg-4 img-c">
+            <img class="img-categoria justify-content-center" src="img/categorias/notebook.png" alt="">
+          </div>
+          <div class="col-xs-2 col-md-6 col-lg-4 img-c">
+            <img class="img-categoria justify-content-center" src="img/categorias/pc.png" alt="">
+          </div>
+          <div class="col-xs-2 col-md-6 col-lg-4 img-c">
+            <img class="img-categoria justify-content-center" src="img/categorias/teclado.png" alt="">
+          </div>
+        </div>
+      </div>
+
+      <footer>
+          <p>TechTrade</p>
+          <p>© Copyright</p>
+      </footer>
+
+
+</div>
+    
+</body>
+</html>
