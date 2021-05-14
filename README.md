@@ -1,4 +1,4 @@
-# Projeto P2 Desenvovimento para Servidores 
+# Projeto P2 Desenvolvimento para Servidores 
 ## Fatec Rubens Lara
 
 - Alunos 
