@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeLeaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" th:href="@{../css/styles.css}">
 </head>
 <body>
     <header class="home-header-container">
@@ -35,7 +35,7 @@
     <section class="home-container">
         <div class="home-content">
             <div class="home-banner">
-                <img src="../static/img/home/relogio-banner.png" alt="Relógio Banner">
+                <img src="img/home/relogio-banner.png" alt="Relógio Banner">
                 <div class="home-banner-text">
                     <h1>RELÓGIO TECH MONKEYS</h1>
                     <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione dolorum vero beatae 
@@ -59,7 +59,7 @@
                     <p>Se você gosta mais da moda tech, essa categoria vai te cativar.</p>
                     <a href="#">Veja agora →</a>
                 </div>
-                <img src="../static/img/home/categorias/moderno.png" alt="Relógio Moderno">
+                <img src="img/home/categorias/moderno.png" alt="Relógio Moderno">
             </div>
             <div class="categoria">
                 <div class="categoria-texto">
@@ -67,7 +67,7 @@
                     <p>Se você prefere algo tradicional, veja nossa coleção clássica.</p>
                     <a href="#">Veja agora →</a>
                 </div>
-                <img src="../static/img/home/categorias/relogio.png" alt="Relógio clássico">
+                <img src="img/home/categorias/relogio.png" alt="Relógio clássico">
             </div>
         </div>
     </section>
@@ -77,7 +77,7 @@
             <h1>DESTAQUES</h1>
             <div class="mais-comprados-grid">
                 <div class="mais-comprados-card">
-                    <img src="../static/img/home/mais-comprados/1.png" alt="Relógio 1">
+                    <img src="img/home/mais-comprados/1.png" alt="Relógio 1">
                     <div class="card-destaque-texto">
                         <h2>Singo Maple</h2>
                         <span class="desconto">20% OFF</span>
@@ -87,7 +87,7 @@
                     <a class="link-padrao" href="#">Ver detalhes</a>
                 </div>
                 <div class="mais-comprados-card">
-                    <img src="../static/img/home/mais-comprados/2.png" alt="Relógio 2">
+                    <img src="img/home/mais-comprados/2.png" alt="Relógio 2">
                     <div class="card-destaque-texto">
                         <h2>Singo Ebony</h2>
                         <span class="desconto">10% OFF</span>
@@ -97,7 +97,7 @@
                     <a class="link-padrao" href="#">Ver detalhes</a>
                 </div>
                 <div class="mais-comprados-card">
-                    <img src="../static/img/home/mais-comprados/3.png" alt="Relógio 3">
+                    <img src="img/home/mais-comprados/3.png" alt="Relógio 3">
                     <div class="card-destaque-texto">
                         <h2>Rakai Ebony</h2>
                         <span class="desconto">15% OFF</span>
@@ -107,7 +107,7 @@
                     <a class="link-padrao" href="#">Ver detalhes</a>
                 </div>
                 <div class="mais-comprados-card">
-                    <img src="../static/img/home/mais-comprados/4.png" alt="Relógio 4">
+                    <img src="img/home/mais-comprados/4.png" alt="Relógio 4">
                     <div class="card-destaque-texto">
                         <h2>Way Kambas Mini Maple</h2>
                         <span class="desconto">10% OFF</span>
