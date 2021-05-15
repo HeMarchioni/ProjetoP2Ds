@@ -1,108 +1,138 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeLeaf.org">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <link rel="stylesheet" th:href="@{../css/bootstrap.min.css}">
-    <script th:src="@{../js/jquery.js}"></script>
-    <script th:src="@{../js/bootstrap.min.js}"></script>
-    <link rel="stylesheet" th:href="@{../css/main.css}">
+    <title>Home | WATCH.ME</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/css/styles.css">
 </head>
-<body class="bg-secondary">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item active">
-                    <a class="nav-link" th:href="@{/}">Home <span class="sr-only">(Página atual)</span></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Catálogo</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Carrinhos</a>
-                  </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/cliente}">Cadastro</a>
-                    </li>
-                </ul>
-              </div>
-              <a class="navbar-brand" href="#">TechTrade</a>
-          </nav>
-
-<div class="container">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="img/img3.jpg" alt="Primeiro Slide">
-            <div class="carousel-caption d-none d-md-block">
-                <h5 class="text-dark fonte-carrossel"></h5>
-                <p class="text-dark fonte-carrossel">Nossos produtos são de altíssima qualidade e com preços que cabem no seu bolso.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="img/img1.png" alt="Segundo Slide">
-            <div class="carousel-caption d-none d-md-block">
-                <h5 class="text-dark fonte-carrossel">Ampla comunidade</h5>
-                <p class="text-dark fonte-carrossel">Acesse o nosso blog e intereja com outras pessoas!</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="img/img2.png" alt="Terceiro Slide">
-            <div class="carousel-caption d-none d-md-block">
-            </div>
-          </div>
+<body>
+    <header class="home-header-container">
+        <div class="home-header-cadastro">
+            <ul>
+                <li> <a href="#"> Cadastrar <i class="fas fa-user-plus"></i> </a></li>
+                <li> <a href="#"> Login <i class="fas fa-sign-in-alt"></i> </a></li>
+                <li> <a href="#"> Carrinho <i class="fas fa-shopping-cart"></i> </a></li>
+            </ul>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Anterior</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Próximo</span>
-        </a>
-      </div>
+        <nav class="navbar">
+            <a id="nav-logo" href="#">WATCH<span>.ME</span></a>
+            <ul>
+                <li> <a href="#"> Sobre </a></li>
+                <li> <a href="#"> Produtos </a></li>
+                <li> <a href="#"> Contato </a></li>
+            </ul>
+        </nav>
+    </header>
 
-      <h2 class="bg-dark m-auto">CATEGORIAS</h2>
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-2 col-md-6 col-lg-4 img-c">
-            <img class="img-categoria justify-content-center" src="img/categorias/fonte.png" alt="">
-          </div>
-          <div class="col-xs-2 col-md-6 col-lg-4 img-c">
-            <img class="img-categoria justify-content-center" src="img/categorias/hd.png" alt="">
-          </div>
-          <div class="col-xs-2 col-md-6 col-lg-4 img-c">
-            <a th:href="@{/placa}"><img class="img-categoria justify-content-center" src="img/categorias/mb.png" alt=""></a>
-          </div>
-          <div class="col-xs-2 col-md-6 col-lg-4 img-c">
-            <img class="img-categoria justify-content-center" src="img/categorias/notebook.png" alt="">
-          </div>
-          <div class="col-xs-2 col-md-6 col-lg-4 img-c">
-            <img class="img-categoria justify-content-center" src="img/categorias/pc.png" alt="">
-          </div>
-          <div class="col-xs-2 col-md-6 col-lg-4 img-c">
-            <img class="img-categoria justify-content-center" src="img/categorias/teclado.png" alt="">
-          </div>
+    <section class="home-container">
+        <div class="home-content">
+            <div class="home-banner">
+                <img src="../static/img/home/relogio-banner.png" alt="Relógio Banner">
+                <div class="home-banner-text">
+                    <h1>RELÓGIO TECH MONKEYS</h1>
+                    <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione dolorum vero beatae 
+                        itaque consequuntur ut recusandae aut est, repudiandae sunt rerum quaerat debitis esse
+                         ex eveniet similique doloremque velit. Adipisci. 
+                    </p>
+                    <div class="home-banner-links">
+                        <a class="link-padrao" href="#">Ver Detalhes</a>
+                        <a class="link-padrao-2" href="#">Produtos Similares</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <footer>
-          <p>TechTrade</p>
-          <p>© Copyright</p>
-      </footer>
+    <section class="home-categorias-container">
+        <div class="home-categorias">
+            <div class="categoria">
+                <div class="categoria-texto">
+                    <h2>Relógios Modernos</h2>
+                    <p>Se você gosta mais da moda tech, essa categoria vai te cativar.</p>
+                    <a href="#">Veja agora →</a>
+                </div>
+                <img src="../static/img/home/categorias/moderno.png" alt="Relógio Moderno">
+            </div>
+            <div class="categoria">
+                <div class="categoria-texto">
+                    <h2>Relógios Tradicionais</h2>
+                    <p>Se você prefere algo tradicional, veja nossa coleção clássica.</p>
+                    <a href="#">Veja agora →</a>
+                </div>
+                <img src="../static/img/home/categorias/relogio.png" alt="Relógio clássico">
+            </div>
+        </div>
+    </section>
 
+    <section class="home-mais-comprados">
+        <div class="mais-comprados-content">
+            <h1>DESTAQUES</h1>
+            <div class="mais-comprados-grid">
+                <div class="mais-comprados-card">
+                    <img src="../static/img/home/mais-comprados/1.png" alt="Relógio 1">
+                    <div class="card-destaque-texto">
+                        <h2>Singo Maple</h2>
+                        <span class="desconto">20% OFF</span>
+                        <span class="preco-original">R$ 1.500,00</span>
+                        <span class="preco-final">R$ 1.264,00</span>
+                    </div>
+                    <a class="link-padrao" href="#">Ver detalhes</a>
+                </div>
+                <div class="mais-comprados-card">
+                    <img src="../static/img/home/mais-comprados/2.png" alt="Relógio 2">
+                    <div class="card-destaque-texto">
+                        <h2>Singo Ebony</h2>
+                        <span class="desconto">10% OFF</span>
+                        <span class="preco-original">R$ 1.500,00</span>
+                        <span class="preco-final">R$ 1.350,00</span>
+                    </div>
+                    <a class="link-padrao" href="#">Ver detalhes</a>
+                </div>
+                <div class="mais-comprados-card">
+                    <img src="../static/img/home/mais-comprados/3.png" alt="Relógio 3">
+                    <div class="card-destaque-texto">
+                        <h2>Rakai Ebony</h2>
+                        <span class="desconto">15% OFF</span>
+                        <span class="preco-original">R$ 1.280,00</span>
+                        <span class="preco-final">R$ 1.118,00</span>
+                    </div>
+                    <a class="link-padrao" href="#">Ver detalhes</a>
+                </div>
+                <div class="mais-comprados-card">
+                    <img src="../static/img/home/mais-comprados/4.png" alt="Relógio 4">
+                    <div class="card-destaque-texto">
+                        <h2>Way Kambas Mini Maple</h2>
+                        <span class="desconto">10% OFF</span>
+                        <span class="preco-original">R$ 1.280,00</span>
+                        <span class="preco-final">R$ 1.024,00</span>
+                    </div>
+                    <a class="link-padrao" href="#">Ver detalhes</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</div>
+    <footer>
+        <div class="footer-content">
+            <span>Desenvolvido por Tech Monkeys ©</span>
+        </div>
+    </footer>
+
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
+    <script src="https://kit.fontawesome.com/5ced3d7c26.js" crossorigin="anonymous"></script>
+    <script src="dist/js/main.js"></script>
     
 </body>
 </html>
