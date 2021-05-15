@@ -1,12 +1,15 @@
 package com.P2Ds.model;
 
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 
 @Repository
 public class ClienteDAO {
@@ -24,14 +27,27 @@ public class ClienteDAO {
     }
 
 
+
     public void inserirCliente(Cliente cliente) {
-        String sql = "INSERT INTO cliente(nome,cpf)" +
-                " VALUES (?,?)";
-        Object[] obj = new Object[2];
-        //primeiro ?
-        obj[0] = cliente.getNome();
-        //segundo ?
-        obj[1] = cliente.getCpf();
+        String sql = "INSERT INTO cliente(cd_Cpf,nm_Cliente,ds_Email,ds_Endereco,ds_Cidade,sg_Uf,cd_Cep,cd_Telefone,cd_Senha)" +
+                " VALUES (?,?,?,?,?,?,?,?,?)";
+        Object[] obj = new Object[9];
+
+        obj[0] = cliente.getCd_Cpf();
+        obj[1] = cliente.getNm_Cliente();
+        obj[2] = cliente.getDs_Email();
+        obj[3] = cliente.getDs_Endereco();
+        obj[4] = cliente.getDs_Cidade();
+        obj[5] = cliente.getSg_Uf();
+        obj[6] = cliente.getCd_Cep();
+        obj[7] = cliente.getCd_Telefone();
+        try {
+            obj[8] = cliente.hashSenha(cliente.getCd_Senha());
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
         jdbc.update(sql, obj);
     }
 

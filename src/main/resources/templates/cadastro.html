@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeLeaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagina cadastro</title>
+</head>
+<body>
+
+<h1> faça seu cadastro!</h1>
+
+
+<form action="#" th:action="@{/cliente}" method=post th:object="${cliente}">
+  Nome: <input type="text" th:field="*{nm_Cliente}"><br>
+  CPF: <input type="text" th:field="*{cd_Cpf}"><br>
+  Email: <input type="text" th:field="*{ds_Email}"><br>
+  Endereço: <input type="text" th:field="*{ds_Endereco}"><br>
+  Cidade: <input type="text" th:field="*{ds_Cidade}"><br>
+  UF: <input type="text" th:field="*{sg_Uf}"><br>
+  CEP: <input type="text" th:field="*{cd_Cep}"><br>
+  Telefone: <input type="text" th:field="*{cd_Telefone}"><br>
+  Senha: <input type="text" th:field="*{cd_Senha}"><br>
+
+  <input type="submit" value="Cadastrar">
+</form>
+
+</body>
+</html>
