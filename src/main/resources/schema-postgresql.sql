@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS cliente (
      cd_Cliente serial PRIMARY KEY,
-     cd_Cpf  varchar(11) not null unique ,
+     cd_Cpf  varchar(14) not null unique ,
      nm_Cliente  varchar(50),
     ds_Email varchar (150),
     ds_Endereco varchar (200),
