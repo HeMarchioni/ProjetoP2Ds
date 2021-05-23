@@ -1,4 +1,4 @@
-package com.P2Ds.model;
+package com.P2Ds.model.Cliente;
 
 
 

@@ -5,6 +5,24 @@
     </head>
     <body>
         <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+
+
+        <ul>
+            <li>
+                <a th:href="@{/cadastroProduto}">
+                    Cadastro de Produtos
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/produtos}">
+                    Listagem
+                </a>
+            </li>
+        </ul>
+
+
+
+
         <form th:action="@{/logout}" method="post">
             <input type="submit" value="Sign Out"/>
         </form>

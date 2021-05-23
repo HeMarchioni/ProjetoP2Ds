@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html lang="pt-br" xmlns:th="http://www.thymeLeaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Formulario de cadastro de produto</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <form action="#" th:action="@{/cadastroProduto}" th:object="${produto}" method=post>
+    	Nome: <input type="text" th:field="*{nm_Produto}">
+    	Categoria: <input type="text" th:field="*{nm_Categoria}">
+        Descrição: <input type="text" th:field="*{ds_Produto}">
+        Preco: <input type="text" th:field="*{vl_Produto}">
+    	<input type="submit" value="Cadastrar">
+    </form>
+</body>
+</html>

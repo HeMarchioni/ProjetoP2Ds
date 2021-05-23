@@ -1,8 +1,8 @@
 package com.P2Ds.ProjetoP2Ds;
 
 
-import com.P2Ds.model.Cliente;
-import com.P2Ds.model.ClienteService;
+import com.P2Ds.model.Cliente.Cliente;
+import com.P2Ds.model.Cliente.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
