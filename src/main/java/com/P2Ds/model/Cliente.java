@@ -5,7 +5,7 @@ package com.P2Ds.model;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Arrays;
+
 
 
 public class Cliente {
@@ -32,7 +32,7 @@ public class Cliente {
         this.cd_Senha = cd_Senha;
     }
 
-    protected String hashSenha(String senha) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+    public String hashSenha(String senha) throws NoSuchAlgorithmException, UnsupportedEncodingException {
         MessageDigest algorithm = MessageDigest.getInstance("SHA-256");
         byte messageDigest[] = algorithm.digest(senha.getBytes("UTF-8"));
 

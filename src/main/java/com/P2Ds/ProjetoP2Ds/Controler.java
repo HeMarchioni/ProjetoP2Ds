@@ -26,24 +26,29 @@ public class Controler {
         return "index.html";
     }
 
-    @GetMapping("/placa")
-    public String placa() {
-        return "placa.html";
-    }
 
-
-    @GetMapping("/cliente")
+    @GetMapping("/cadastro")
     public String formCliente(Model model) {
         model.addAttribute("cliente",new Cliente());
         return "cadastro";
     }
 
-    @PostMapping("/cliente")
+    @PostMapping("/cadastro")
     public String postCliente(@ModelAttribute Cliente cli,
                               Model model) {
         ClienteService cs = context.getBean(ClienteService.class);
         cs.inserirCliente(cli);
         return "sucesso";
+    }
+
+    @GetMapping("/login")
+    public String login() {
+        return "login.html";
+    }
+
+    @GetMapping("/logado")
+    public String logado() {
+        return "logado.html";
     }
 
 

@@ -17,8 +17,8 @@
     <header class="home-header-container">
         <div class="home-header-cadastro">
             <ul>
-                <li> <a href="cadastro.html"> Cadastrar <i class="fas fa-user-plus"></i> </a></li>
-                <li> <a href="login.html"> Login <i class="fas fa-sign-in-alt"></i> </a></li>
+                <li> <a th:href="@{/cadastro}"> Cadastrar <i class="fas fa-user-plus"></i> </a></li>
+                <li> <a th:href="@{/logado}"> Login <i class="fas fa-sign-in-alt"></i> </a></li>
                 <li> <a href="#"> Carrinho <i class="fas fa-shopping-cart"></i> </a></li>
             </ul>
         </div>
@@ -38,7 +38,7 @@
             <form 
                 id="form-cadastro" 
                 action="#" 
-                th:action="@{/cliente}" 
+                th:action="@{/cadastro}"
                 method=post 
                 th:object="${cliente}"
             >

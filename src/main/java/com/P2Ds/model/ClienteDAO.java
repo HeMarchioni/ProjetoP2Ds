@@ -4,12 +4,12 @@ package com.P2Ds.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
-import java.io.UnsupportedEncodingException;
-import java.security.NoSuchAlgorithmException;
+
 
 @Repository
 public class ClienteDAO {
@@ -19,12 +19,16 @@ public class ClienteDAO {
     DataSource dataSource;
 
 
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
     JdbcTemplate jdbc;
 
     @PostConstruct
     private void initialize() {
         jdbc = new JdbcTemplate(dataSource);
     }
+
 
 
 
@@ -41,13 +45,7 @@ public class ClienteDAO {
         obj[5] = cliente.getSg_Uf();
         obj[6] = cliente.getCd_Cep();
         obj[7] = cliente.getCd_Telefone();
-        try {
-            obj[8] = cliente.hashSenha(cliente.getCd_Senha());
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+        obj[8] = passwordEncoder.encode(cliente.getCd_Senha());
         jdbc.update(sql, obj);
     }
 

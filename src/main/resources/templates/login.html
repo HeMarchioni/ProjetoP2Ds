@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeLeaf.org">
+<html lang="pt-br" xmlns:th="http://www.thymeLeaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,7 @@
         <div class="home-header-cadastro">
             <ul>
                 <li> <a href="cadastro.html"> Cadastrar <i class="fas fa-user-plus"></i> </a></li>
-                <li> <a href="login.html"> Login <i class="fas fa-sign-in-alt"></i> </a></li>
+                <li> <a href="logado.html"> Login <i class="fas fa-sign-in-alt"></i> </a></li>
                 <li> <a href="#"> Carrinho <i class="fas fa-shopping-cart"></i> </a></li>
             </ul>
         </div>
@@ -35,17 +35,24 @@
     <section class="login-container">
         <div class="login-content">
             <h1>ENTRAR</h1>
-            <form 
-                id="form-login" 
-                action="#" 
-                th:action="@{/cliente}" 
-                method=post 
-                th:object="${cliente}"
+
+            <div th:if="${param.error}">
+                Invalid username and password.
+            </div>
+
+            <div th:if="${param.logout}">
+                You have been logged out.
+            </div>
+
+            <form
+                id="form-login"
+                th:action="@{/login}"
+                method=post
             >
                 <label for="email">E-mail: </label>
                 <input 
-                    id="email" name="email" type="email" placeholder="Ex: mail@exemplo.com" 
-                    th:field="*{ds_Email}" 
+                    id="email" name="username" type="email" placeholder="Ex: mail@exemplo.com"
+
                     required 
                     data-msg="Por favor, insira um e-mail válido."
                     data-rule-maxlength="150"
@@ -54,9 +61,8 @@
                
                 <label for="senha">Senha: </label>
                 <input 
-                    id="senha" name="senha" type="password" placeholder="Digite sua senha" 
-                    th:field="*{cd_Senha}" 
-                    required 
+                    id="senha" name="password" type="password" placeholder="Digite sua senha"
+                    required
                     data-msg="Insira a senha"
                     data-rule-minlength="8" data-msg-minlength="A senha deve ter no mínimo 8 caractéres."
                     data-rule-maxlength="50" data-msg-maxlength="A senha deve ter no máximo 50 caractéres."

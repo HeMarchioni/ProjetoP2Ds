@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeLeaf.org">
+<html lang="pt-br" xmlns:th="http://www.thymeLeaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,8 +17,8 @@
     <header class="home-header-container">
         <div class="home-header-cadastro">
             <ul>
-                <li> <a th:href="@{/cliente}"> Cadastrar <i class="fas fa-user-plus"></i> </a></li>
-                <li> <a href="#"> Login <i class="fas fa-sign-in-alt"></i> </a></li>
+                <li> <a th:href="@{/cadastro}"> Cadastrar <i class="fas fa-user-plus"></i> </a></li>
+                <li> <a th:href="@{/logado}"> Login <i class="fas fa-sign-in-alt"></i> </a></li>
                 <li> <a href="#"> Carrinho <i class="fas fa-shopping-cart"></i> </a></li>
             </ul>
         </div>
@@ -132,7 +132,7 @@
         crossorigin="anonymous">
     </script>
     <script src="https://kit.fontawesome.com/5ced3d7c26.js" crossorigin="anonymous"></script>
-    <script src="dist/js/main.js"></script>
+    <script src="js/main.js"></script>
     
 </body>
 </html>
