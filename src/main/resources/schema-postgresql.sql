@@ -21,4 +21,12 @@ CREATE TABLE IF NOT EXISTS produto (
     vl_Produto real not null
     );
 
-
+CREATE TABLE IF NOT EXISTS fornecedor(
+    cd_Fornecedor serial PRIMARY KEY,
+    nm_Fornecedor varchar(50) not null,
+    nm_Produto varchar(50) ,
+    ds_Fornecedor varchar (200) not null,
+    nm_Contato varchar (50) not null,
+    cd_Telefone varchar (20) not null,
+    ds_Email varchar (150)
+    );

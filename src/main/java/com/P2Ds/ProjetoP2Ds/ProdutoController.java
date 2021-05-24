@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-@ComponentScan("com.P2Ds.model")  //--> VAI PROCURAR NA PASTA COM.MODEL.PRODUTO
+@ComponentScan("com.P2Ds.model")  //--> VAI PROCURAR NA PASTA COM.MODEL
 public class ProdutoController {
 
     @Autowired

@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html lang="pt-br" xmlns:th="http://www.thymeLeaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Formulario de cadastro de Fornecedor</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <form action="#" th:action="@{/cadastroFornecedor}" th:object="${fornecedor}" method=post>
+    	Nome do fornecedor: <input type="text" th:field="*{nm_Fornecedor}">
+    	Produto Fornecido: <input type="text" th:field="*{nm_Produto}">
+        Descrição: <input type="text" th:field="*{ds_Fornecedor}">
+        contato: <input type="text" th:field="*{nm_Contato}">
+        Telefone: <input type="text" th:field="*{cd_Telefone}">
+        Email: <input type="text" th:field="*{ds_Email}">
+    	<input type="submit" value="Cadastrar">
+    </form>
+</body>
+</html>
