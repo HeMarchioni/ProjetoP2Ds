@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeLeaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | WATCH.ME</title>
+    <title>Home | ACME</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" th:href="@{../img/favicon/favicon.ico}"/>
 
     <link rel="stylesheet" th:href="@{../css/styles.css}">
 </head>
@@ -18,12 +20,12 @@
         <div class="home-header-cadastro">
             <ul>
                 <li> <a th:href="@{/cadastro}"> Cadastrar <i class="fas fa-user-plus"></i> </a></li>
-                <li> <a th:href="@{/logado}"> Login <i class="fas fa-sign-in-alt"></i> </a></li>
+                <li> <a th:href="@{/login}"> Login <i class="fas fa-sign-in-alt"></i> </a></li>
                 <li> <a href="#"> Carrinho <i class="fas fa-shopping-cart"></i> </a></li>
             </ul>
         </div>
         <nav class="navbar">
-            <a cd_Produto="nav-logo" href="#">WATCH<span>.ME</span></a>
+            <a id="nav-logo" th:href="@{/index}">REDE <span>ACME</span></a>
             <ul>
                 <li> <a href="#"> Sobre </a></li>
                 <li> <a href="#"> Produtos </a></li>
@@ -35,15 +37,15 @@
     <section class="home-container">
         <div class="home-content">
             <div class="home-banner">
-                <img src="img/home/relogio-banner.png" alt="Relógio Banner">
+                <img src="img/home/tenis-banner.png" alt="Relógio Banner">
                 <div class="home-banner-text">
-                    <h1>RELÓGIO TECH MONKEYS</h1>
+                    <h1>TÊNIS TECH MONKEYS</h1>
                     <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione dolorum vero beatae 
                         itaque consequuntur ut recusandae aut est, repudiandae sunt rerum quaerat debitis esse
                          ex eveniet similique doloremque velit. Adipisci. 
                     </p>
                     <div class="home-banner-links">
-                        <a class="link-padrao" href="#">Ver Detalhes</a>
+                        <a class="link-padrao" th:href="@{/produto}">Ver Detalhes</a>
                         <a class="link-padrao-2" href="#">Produtos Similares</a>
                     </div>
                 </div>
@@ -55,19 +57,19 @@
         <div class="home-categorias">
             <div class="categoria">
                 <div class="categoria-texto">
-                    <h2>Relógios Modernos</h2>
-                    <p>Se você gosta mais da moda tech, essa categoria vai te cativar.</p>
+                    <h2>Tênis Casuais</h2>
+                    <p>Para quem procura algo casual sem perder a postura.</p>
                     <a href="#">Veja agora →</a>
                 </div>
-                <img src="img/home/categorias/moderno.png" alt="Relógio Moderno">
+                <img src="img/home/categorias/casual.png" alt="Tênis casual">
             </div>
             <div class="categoria">
                 <div class="categoria-texto">
-                    <h2>Relógios Tradicionais</h2>
-                    <p>Se você prefere algo tradicional, veja nossa coleção clássica.</p>
+                    <h2>Tênis Esportivos</h2>
+                    <p>Se seu foco é esporte, confira os melhores tênis dessa linha.</p>
                     <a href="#">Veja agora →</a>
                 </div>
-                <img src="img/home/categorias/relogio.png" alt="Relógio clássico">
+                <img src="img/home/categorias/esporte.png" alt="Tênis esportivo">
             </div>
         </div>
     </section>
@@ -77,44 +79,44 @@
             <h1>DESTAQUES</h1>
             <div class="mais-comprados-grid">
                 <div class="mais-comprados-card">
-                    <img src="img/home/mais-comprados/1.png" alt="Relógio 1">
+                    <img src="img/home/mais-comprados/springblade.png" alt="Tênis Adidas springblade">
                     <div class="card-destaque-texto">
-                        <h2>Singo Maple</h2>
+                        <h2>Adidas Springblade</h2>
                         <span class="desconto">20% OFF</span>
                         <span class="preco-original">R$ 1.500,00</span>
                         <span class="preco-final">R$ 1.264,00</span>
                     </div>
-                    <a class="link-padrao" href="#">Ver detalhes</a>
+                    <a class="link-padrao" th:href="@{/produto}">Ver detalhes</a>
                 </div>
                 <div class="mais-comprados-card">
-                    <img src="img/home/mais-comprados/2.png" alt="Relógio 2">
+                    <img src="img/home/mais-comprados/nike-azul.png" alt="Tênis Kaptir Adidas">
                     <div class="card-destaque-texto">
-                        <h2>Singo Ebony</h2>
+                        <h2>Adidas Kaptir</h2>
                         <span class="desconto">10% OFF</span>
                         <span class="preco-original">R$ 1.500,00</span>
                         <span class="preco-final">R$ 1.350,00</span>
                     </div>
-                    <a class="link-padrao" href="#">Ver detalhes</a>
+                    <a class="link-padrao" th:href="@{/produto}">Ver detalhes</a>
                 </div>
                 <div class="mais-comprados-card">
-                    <img src="img/home/mais-comprados/3.png" alt="Relógio 3">
+                    <img src="img/home/mais-comprados/air-max.png" alt="Tênis Nike air-max">
                     <div class="card-destaque-texto">
-                        <h2>Rakai Ebony</h2>
+                        <h2>Nike Air Max</h2>
                         <span class="desconto">15% OFF</span>
                         <span class="preco-original">R$ 1.280,00</span>
                         <span class="preco-final">R$ 1.118,00</span>
                     </div>
-                    <a class="link-padrao" href="#">Ver detalhes</a>
+                    <a class="link-padrao" th:href="@{/produto}">Ver detalhes</a>
                 </div>
                 <div class="mais-comprados-card">
-                    <img src="img/home/mais-comprados/4.png" alt="Relógio 4">
+                    <img src="img/home/mais-comprados/air-max-white.png" alt="Tênis Nike air-max branco">
                     <div class="card-destaque-texto">
-                        <h2>Way Kambas Mini Maple</h2>
+                        <h2>Nike Air Max White</h2>
                         <span class="desconto">10% OFF</span>
                         <span class="preco-original">R$ 1.280,00</span>
                         <span class="preco-final">R$ 1.024,00</span>
                     </div>
-                    <a class="link-padrao" href="#">Ver detalhes</a>
+                    <a class="link-padrao" th:href="@{/produto}">Ver detalhes</a>
                 </div>
             </div>
         </div>
@@ -132,7 +134,7 @@
         crossorigin="anonymous">
     </script>
     <script src="https://kit.fontawesome.com/5ced3d7c26.js" crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
+    <script src="dist/js/main.js"></script>
     
 </body>
 </html>

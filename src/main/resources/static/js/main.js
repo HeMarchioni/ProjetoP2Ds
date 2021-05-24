@@ -28,3 +28,25 @@ function cadastro(){
 function login(){
     $("#form-login").validate();
 }
+
+function detalhes(){
+    $('.produto-slider-principal').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.produto-slider-carousel'
+      });
+      $('.produto-slider-carousel').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: '.produto-slider-principal',
+        dots: false,
+        focusOnSelect: true
+    });
+
+    $('.descricao-header').click(function(){
+        $('.descricao-final').slideToggle();
+        $('#mostrar-descricao').toggleClass('button-rotate');
+    })
+}
