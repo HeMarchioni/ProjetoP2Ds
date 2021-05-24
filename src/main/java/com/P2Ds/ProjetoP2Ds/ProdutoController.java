@@ -82,7 +82,7 @@ public class ProdutoController {
     public String update(@PathVariable("cd_Produto") int cd_Produto, @ModelAttribute Produto produto, Model model) {
         ProdutoService prodService = context.getBean(ProdutoService.class);
         prodService.updateProduto(cd_Produto, produto);
-        return "redirect:/listaProdutos";
+        return "redirect:/listarProdutos";
     }
 
 
