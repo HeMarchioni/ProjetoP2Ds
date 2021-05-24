@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista Produtos</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <table class="table table-striped table-primary">
+    	<thead class="ttop">
+        	<tr class="table-info">
+            	<td><b> Codigo do produto</b></td>
+            	<td><b>Nome</b> </td>
+            	<td><b>Categoria</b> </td>
+            	<td> Descrição do Produto</td>
+            	<td> Preço </td>
+			</tr>
+    	</thead>
+    	<tbody>
+        	<tr th:each="prod : ${produtos}">
+            	<td th:text="${prod.cd_Produto}"></td>
+            	<td th:text="${prod.nm_Produto}"></td>
+            	<td th:text="${prod.nm_Categoria}"></td>
+				<td th:text="${prod.ds_Produto}"></td>
+				<td th:text="${prod.vl_Produto}"></td>
+
+            	<td>
+            		<a th:href="@{'upd/' + ${prod.cd_Produto}}">
+            			Editar
+            		</a>
+            	</td>
+            	<td> 
+            		<form th:action="@{'apagar/' + ${prod.cd_Produto}}" method=post>
+            			<input type="submit" value="X">
+            		</form>
+            	</td>
+       		</tr>
+     	</tbody>
+    </table>
+</body>
+</html>

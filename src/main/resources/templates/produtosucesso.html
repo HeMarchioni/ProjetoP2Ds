@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html lang="pt-br" xmlns:th="http://www.thymeLeaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Produto cadastrado</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+   <h1>PRODUTO CADASTRADO</h1>
+   <div th:text="'Codigo do Produto : ' + ${prod.cd_Produto} "></div>
+   <div th:text="'Nome : ' + ${prod.nm_Produto} "></div>
+   <div th:text="'Categoria : ' + ${prod.nm_Categoria} "></div>
+   <div th:text="'Descrição : ' + ${prod.ds_Produto} "></div>
+   <div th:text="'Preço : ' + ${prod.vl_Produto} "></div>
+   <a href="/produto">Voltar</a>
+</body>
+</html>

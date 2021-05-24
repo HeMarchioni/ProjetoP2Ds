@@ -23,7 +23,7 @@
             </ul>
         </div>
         <nav class="navbar">
-            <a id="nav-logo" href="index.html">WATCH<span>.ME</span></a>
+            <a cd_Produto="nav-logo" href="index.html">WATCH<span>.ME</span></a>
             <ul>
                 <li> <a href="#"> Sobre </a></li>
                 <li> <a href="#"> Produtos </a></li>
@@ -45,13 +45,13 @@
             </div>
 
             <form
-                id="form-login"
+                cd_Produto="form-login"
                 th:action="@{/login}"
                 method=post
             >
                 <label for="email">E-mail: </label>
                 <input 
-                    id="email" name="username" type="email" placeholder="Ex: mail@exemplo.com"
+                    cd_Produto="email" name="username" type="email" placeholder="Ex: mail@exemplo.com"
 
                     required 
                     data-msg="Por favor, insira um e-mail válido."
@@ -61,7 +61,7 @@
                
                 <label for="senha">Senha: </label>
                 <input 
-                    id="senha" name="password" type="password" placeholder="Digite sua senha"
+                    cd_Produto="senha" name="password" type="password" placeholder="Digite sua senha"
                     required
                     data-msg="Insira a senha"
                     data-rule-minlength="8" data-msg-minlength="A senha deve ter no mínimo 8 caractéres."

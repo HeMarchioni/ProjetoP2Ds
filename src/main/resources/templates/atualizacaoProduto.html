@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="pt-br" xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+</head>
+<body>
+
+<h1> Atualize o produto desejado</h1>
+
+    <form action="#" th:action="@{'/upd/' + ${cd_Produto}}" method=post>
+        Codigo do Produto: <div type="text" th:field="${antigo.cd_Produto}"> </div>
+    	Nome: <input type="text" th:field="${antigo.nm_Produto}">
+        Categoria: <input type="text" th:field="${antigo.nm_Categoria}">
+        Descrição: <input type="text" th:field="${antigo.ds_Produto}">
+        Preco: <input type="text" th:field="${antigo.vl_Produto}">
+
+    	<input type="submit" value="Cadastrar">
+    </form>
+</body>
+</html>

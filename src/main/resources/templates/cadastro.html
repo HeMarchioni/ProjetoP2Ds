@@ -23,7 +23,7 @@
             </ul>
         </div>
         <nav class="navbar">
-            <a id="nav-logo" href="index.html">WATCH<span>.ME</span></a>
+            <a cd_Produto="nav-logo" href="index.html">WATCH<span>.ME</span></a>
             <ul>
                 <li> <a href="#"> Sobre </a></li>
                 <li> <a href="#"> Produtos </a></li>
@@ -36,7 +36,7 @@
         <div class="cadastro-content">
             <h1>REGISTRAR</h1>
             <form 
-                id="form-cadastro" 
+                cd_Produto="form-cadastro"
                 action="#" 
                 th:action="@{/cadastro}"
                 method=post 
@@ -44,7 +44,7 @@
             >
                 <label for="nome">Nome: </label>
                 <input 
-                    id="nome" name="nome" type="text" placeholder="Nome completo" 
+                    cd_Produto="nome" name="nome" type="text" placeholder="Nome completo"
                     th:field="*{nm_Cliente}" 
                     required 
                     data-msg="Por favor, preencha este campo."
@@ -53,7 +53,7 @@
 
                 <label for="cpf">CPF: </label>
                 <input 
-                    id="cpf" name="cpf" type="text" placeholder="Ex: 123.456.789-00" 
+                    cd_Produto="cpf" name="cpf" type="text" placeholder="Ex: 123.456.789-00"
                     th:field="*{cd_Cpf}" 
                     required 
                     data-msg="Por favor, insira um cpf válido."
@@ -64,7 +64,7 @@
                     <div class="bloco-email">
                         <label for="email">E-mail: </label>
                         <input 
-                            id="email" name="email" type="email" placeholder="Ex: mail@exemplo.com" 
+                            cd_Produto="email" name="email" type="email" placeholder="Ex: mail@exemplo.com"
                             th:field="*{ds_Email}" 
                             required 
                             data-msg="Por favor, insira um e-mail válido."
@@ -76,7 +76,7 @@
                     <div class="bloco-telefone">
                         <label for="tel">Telefone: </label>
                         <input 
-                            id="tel" name="tel" type="tel" placeholder="99 9 9999-9999" 
+                            cd_Produto="tel" name="tel" type="tel" placeholder="99 9 9999-9999"
                             th:field="*{cd_Telefone}" 
                             required 
                             data-msg="Por favor, insira um telefone ou celular."
@@ -87,7 +87,7 @@
 
                 <label for="cep">CEP: </label>
                 <input 
-                    id="cep" name="cep" type="text" placeholder="Ex: 99999-999" 
+                    cd_Produto="cep" name="cep" type="text" placeholder="Ex: 99999-999"
                     th:field="*{cd_Cep}" 
                     required 
                     data-msg="Por favor, insira um CEP válido."
@@ -96,7 +96,7 @@
 
                 <label for="endereco">Endereço: </label>
                 <input 
-                    id="endereco" name="endereco" type="text" placeholder="Ex: Rua Senador Exemplo, n° 999" 
+                    cd_Produto="endereco" name="endereco" type="text" placeholder="Ex: Rua Senador Exemplo, n° 999"
                     th:field="*{ds_Endereco}" 
                     required
                     data-msg="Por favor, insira seu endereço."
@@ -107,7 +107,7 @@
                     <div class="bloco-cidade">
                         <label for="cidade">Cidade: </label>
                         <input 
-                            id="cidade" name="cidade" type="text" placeholder="Ex: Santos" 
+                            cd_Produto="cidade" name="cidade" type="text" placeholder="Ex: Santos"
                             th:field="*{ds_Cidade}" 
                             required 
                             data-msg="Por favor, insira a cidade."
@@ -118,7 +118,7 @@
                     <div class="bloco-estado">
                         <label for="uf">UF: </label>
                         <input 
-                            id="uf" name="uf" type="text" placeholder="Ex: SP" 
+                            cd_Produto="uf" name="uf" type="text" placeholder="Ex: SP"
                             th:field="*{sg_Uf}" 
                             required 
                             data-msg="Por favor, insira o UF do estado."
@@ -130,7 +130,7 @@
 
                 <label for="senha">Senha: </label>
                 <input 
-                    id="senha" name="senha" type="password" placeholder="Digite sua senha" 
+                    cd_Produto="senha" name="senha" type="password" placeholder="Digite sua senha"
                     th:field="*{cd_Senha}" 
                     required 
                     data-msg="Por favor, crie uma senha."
@@ -140,7 +140,7 @@
 
                 <label for="senha2">Confirmar senha: </label>
                 <input 
-                    id="senha2" name="senha2" type="password" placeholder="Confirme sua senha" 
+                    cd_Produto="senha2" name="senha2" type="password" placeholder="Confirme sua senha"
                     required 
                     data-msg="As senhas devem ser idênticas."
                 >

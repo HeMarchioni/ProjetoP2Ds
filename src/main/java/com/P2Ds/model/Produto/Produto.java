@@ -4,27 +4,27 @@ package com.P2Ds.model.Produto;
 
 public class Produto {
 
-    private long id;
+    private long cd_Produto;
     private String nm_Produto,nm_Categoria,ds_Produto;
     private double vl_Produto;
 
     public Produto() {
     }
 
-    public Produto(long id, String nm_Produto, String nm_Categoria, String ds_Produto, double vl_Produto) {
-        this.id = id;
+    public Produto(long cd_Produto, String nm_Produto, String nm_Categoria, String ds_Produto, double vl_Produto) {
+        this.cd_Produto = cd_Produto;
         this.nm_Produto = nm_Produto;
         this.nm_Categoria = nm_Categoria;
         this.ds_Produto = ds_Produto;
         this.vl_Produto = vl_Produto;
     }
 
-    public long getId() {
-        return id;
+    public long getCd_Produto() {
+        return cd_Produto;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setCd_Produto(long cd_Produto) {
+        this.cd_Produto = cd_Produto;
     }
 
     public String getNm_Produto() {
