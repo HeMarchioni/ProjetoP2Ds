@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" >
+<html lang="pt-br" xmlns:th="http://www.thymeLeaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,12 +23,12 @@
         <div class="home-header-cadastro">
             <ul>
                 <li> <a th:href="@{/cadastro}"> Cadastrar <i class="fas fa-user-plus"></i> </a></li>
-                <li> <a th:href="@{/login}"> Login <i class="fas fa-sign-in-alt"></i> </a></li>
+                <li> <a th:href="@{/logado}"> Login <i class="fas fa-sign-in-alt"></i> </a></li>
                 <li> <a href="#"> Carrinho <i class="fas fa-shopping-cart"></i> </a></li>
             </ul>
         </div>
         <nav class="navbar">
-            <a id="nav-logo" th:href="@{/index}">REDE <span>ACME</span></a>
+            <a id="nav-logo" th:href="@{/}">REDE <span>ACME</span></a>
             <ul>
                 <li> <a href="#"> Sobre </a></li>
                 <li> <a href="#"> Produtos </a></li>
@@ -63,13 +63,13 @@
                     <div class="produto-tamanho">
                         <h2>Tamanhos disponíveis:</h2>
                         <div class="tamanho-numeros">
-                            <button type="button" class="select-button">38</button type="button">
-                            <button type="button" class="select-button">39</button type="button">
-                            <button type="button" class="select-button">40</button type="button">
-                            <button type="button" class="select-button">41</button type="button">
-                            <button type="button" class="select-button">42</button type="button">
-                            <button type="button" class="select-button">43</button type="button">
-                            <button type="button" class="select-button">44</button type="button">
+                            <button type="button" class="select-button">38</button>
+                            <button type="button" class="select-button">39</button>
+                            <button type="button" class="select-button">40</button>
+                            <button type="button" class="select-button">41</button>
+                            <button type="button" class="select-button">42</button>
+                            <button type="button" class="select-button">43</button>
+                            <button type="button" class="select-button">44</button>
                         </div>
                     </div>
                     <div class="produto-cor">

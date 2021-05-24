@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeLeaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,12 +20,12 @@
         <div class="home-header-cadastro">
             <ul>
                 <li> <a th:href="@{/cadastro}"> Cadastrar <i class="fas fa-user-plus"></i> </a></li>
-                <li> <a th:href="@{/login}"> Login <i class="fas fa-sign-in-alt"></i> </a></li>
+                <li> <a th:href="@{/logado}"> Login <i class="fas fa-sign-in-alt"></i> </a></li>
                 <li> <a href="#"> Carrinho <i class="fas fa-shopping-cart"></i> </a></li>
             </ul>
         </div>
         <nav class="navbar">
-            <a id="nav-logo" th:href="@{/index}">REDE <span>ACME</span></a>
+            <a id="nav-logo" th:href="@{/}">REDE <span>ACME</span></a>
             <ul>
                 <li> <a href="#"> Sobre </a></li>
                 <li> <a href="#"> Produtos </a></li>
@@ -45,7 +45,7 @@
                          ex eveniet similique doloremque velit. Adipisci. 
                     </p>
                     <div class="home-banner-links">
-                        <a class="link-padrao" th:href="@{/produto}">Ver Detalhes</a>
+                        <a class="link-padrao" th:href="@{/detalheProd}">Ver Detalhes</a>
                         <a class="link-padrao-2" href="#">Produtos Similares</a>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                         <span class="preco-original">R$ 1.500,00</span>
                         <span class="preco-final">R$ 1.264,00</span>
                     </div>
-                    <a class="link-padrao" th:href="@{/produto}">Ver detalhes</a>
+                    <a class="link-padrao" th:href="@{/detalheProd}">Ver detalhes</a>
                 </div>
                 <div class="mais-comprados-card">
                     <img src="img/home/mais-comprados/nike-azul.png" alt="Tênis Kaptir Adidas">
@@ -96,7 +96,7 @@
                         <span class="preco-original">R$ 1.500,00</span>
                         <span class="preco-final">R$ 1.350,00</span>
                     </div>
-                    <a class="link-padrao" th:href="@{/produto}">Ver detalhes</a>
+                    <a class="link-padrao" th:href="@{/detalheProd}">Ver detalhes</a>
                 </div>
                 <div class="mais-comprados-card">
                     <img src="img/home/mais-comprados/air-max.png" alt="Tênis Nike air-max">
@@ -106,7 +106,7 @@
                         <span class="preco-original">R$ 1.280,00</span>
                         <span class="preco-final">R$ 1.118,00</span>
                     </div>
-                    <a class="link-padrao" th:href="@{/produto}">Ver detalhes</a>
+                    <a class="link-padrao" th:href="@{/detalheProd}">Ver detalhes</a>
                 </div>
                 <div class="mais-comprados-card">
                     <img src="img/home/mais-comprados/air-max-white.png" alt="Tênis Nike air-max branco">
@@ -116,7 +116,7 @@
                         <span class="preco-original">R$ 1.280,00</span>
                         <span class="preco-final">R$ 1.024,00</span>
                     </div>
-                    <a class="link-padrao" th:href="@{/produto}">Ver detalhes</a>
+                    <a class="link-padrao" th:href="@{/detalheProd}">Ver detalhes</a>
                 </div>
             </div>
         </div>

@@ -26,6 +26,11 @@ public class Controler {
         return "index.html";
     }
 
+    @GetMapping("/detalheProd")
+    public String detalheProd() {
+        return "produto.html";
+    }
+
 
     @GetMapping("/cadastro")
     public String formCliente(Model model) {
