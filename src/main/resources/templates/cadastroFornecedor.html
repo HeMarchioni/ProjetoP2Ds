@@ -16,6 +16,23 @@
     <link rel="stylesheet" th:href="@{../css/styles.css}">
 </head>
 <body>
+	<header class="home-header-container">
+        <div class="home-header-cadastro">
+            <ul>
+                <li> <a th:href="@{/cadastro}"> Cadastrar <i class="fas fa-user-plus"></i> </a></li>
+                <li> <a th:href="@{/logado}"> Login <i class="fas fa-sign-in-alt"></i> </a></li>
+                <li> <a href="#"> Carrinho <i class="fas fa-shopping-cart"></i> </a></li>
+            </ul>
+        </div>
+        <nav class="navbar">
+            <a id="nav-logo" th:href="@{/}">REDE <span>ACME</span></a>
+            <ul>
+                <li> <a href="@{/sobre}"> Sobre </a></li>
+                <li> <a href="#"> Produtos </a></li>
+                <li> <a th:href="@{/contato}"> Contato </a></li>
+            </ul>
+        </nav>
+    </header>
     <form class="cadastrar-produto-form" action="#" th:action="@{/cadastroFornecedor}" th:object="${fornecedor}" method=post>
     	<label for="fornecedor">Nome do fornecedor:</label> 
         <input id="fornecedor" name="fornecedor" type="text" th:field="*{nm_Fornecedor}" placeholder="Lojas Renner">
