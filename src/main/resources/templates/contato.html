@@ -15,7 +15,10 @@
 
     <link rel="stylesheet" th:href="@{../css/styles.css}">
 </head>
-<body onload="cadastro()">
+
+<!-- ARRUMAR AQUI CARLOS -->
+
+<body onload="cadastro()" >
     <header class="home-header-container">
         <div class="home-header-cadastro">
             <ul>
@@ -29,7 +32,7 @@
             <ul>
                 <li> <a href="#"> Sobre </a></li>
                 <li> <a href="#"> Produtos </a></li>
-                <li> <a href="#"> Contato </a></li>
+                <li> <a th:href="@{/contato}"> Contato </a></li>
             </ul>
         </nav>
     </header>
@@ -38,45 +41,45 @@
         <div class="cadastro-content">
             <h1>CONTATO</h1>
             <h3>Fale conosco</h3>
-            <form 
-                cd_Produto="form-cadastro"
-                action="#" 
-                th:action="@{/cadastro}"
-                method=post 
-                th:object="${cliente}"
+            <form
+                id="form-cadastro"
+                action="#"
+
+                method=post
             >
-                <label for="nome">Nome: </label>
-                <input 
-                    cd_Produto="nome" name="nome" type="text" placeholder="Nome completo"
-                    th:field="*{nm_Cliente}" 
-                    required 
+                <label >Nome: </label>
+                <input
+                    id="nm_Contato" name="nm-Contato" type="text" placeholder="Nome completo"
+
+                    required
                     data-msg="Por favor, preencha este campo."
                     data-rule-minlength="3" data-msg-minlength="Insira seu nome completo."
                 >
 
-                
 
-                <label for="email">E-mail: </label>
-                <input 
-                    cd_Produto="email" name="email" type="email" placeholder="Ex: mail@exemplo.com"
-                    th:field="*{ds_Email}" 
-                    required 
+
+                <label >E-mail: </label>
+                <input
+                    id="ds_Email" name="ds_Email" type="email" placeholder="Ex: mail@exemplo.com"
+
+                    required
                     data-msg="Por favor, insira um e-mail válido."
-                    data-rule-maxlength="150"                       
+                    data-rule-maxlength="150"
                 >
                 <br>
-                <label id="textarea">
+                <label>
                     Mensagem:<br>
-                    <textarea 
-                    placeholder="Digite sua mensagem" 
-                    name="mensagem" id="mensagem" 
-                    cols="35" 
+                    <textarea
+                    placeholder="Digite sua mensagem"
+                    name="ds_Mensagem" id="mensagem"
+                    cols="35"
                     rows="10"
                     maxlength="150"
+
                     ></textarea>
                   </label>
-                    
-              
+
+
                 <button class="link-padrao" type="submit">Enviar</button>
               </form>
         </div>
@@ -97,6 +100,6 @@
     <script type="text/javascript" src="js/jquery.validate.min.js"></script>
     <script src="js/jquery.mask.min.js"></script>
     <script src="js/main.js"></script>
-    
+
 </body>
 </html>

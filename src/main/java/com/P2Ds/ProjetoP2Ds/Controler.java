@@ -3,6 +3,7 @@ package com.P2Ds.ProjetoP2Ds;
 
 import com.P2Ds.model.Cliente.Cliente;
 import com.P2Ds.model.Cliente.ClienteService;
+import com.P2Ds.model.Contato.Contato;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
@@ -46,6 +47,9 @@ public class Controler {
         return "sucesso";
     }
 
+
+    // - Parte login -==================================================
+
     @GetMapping("/login")
     public String login() {
         return "login.html";
@@ -57,6 +61,21 @@ public class Controler {
     }
 
 
+    // - pagina Contato ==============================================
 
+    @GetMapping("/contato")
+    public String contato(Model model) {
+        model.addAttribute("contato",new Contato());
+        return "contato.html";
+    }
+
+/*
+    @PostMapping("/contato")
+    public String postContato(@ModelAttribute Contato contato,
+                              Model model) {
+
+        return "sucesso";
+    }
+ */
 
 }

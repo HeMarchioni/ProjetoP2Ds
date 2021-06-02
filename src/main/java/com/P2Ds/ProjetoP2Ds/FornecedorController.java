@@ -3,8 +3,6 @@ package com.P2Ds.ProjetoP2Ds;
 
 import com.P2Ds.model.Fornecedor.Fornecedor;
 import com.P2Ds.model.Fornecedor.FornecedorService;
-import com.P2Ds.model.Produto.Produto;
-import com.P2Ds.model.Produto.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
