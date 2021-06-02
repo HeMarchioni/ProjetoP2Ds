@@ -1,0 +1,18 @@
+#prod // banco de dados de produção
+
+
+spring:
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://ec2-34-193-113-223.compute-1.amazonaws.com:5432/d5n3di9n3gtnn3
+    username: humabkcfomwcbs
+    password: b259e85d34818611ad240278b62bdecb5f553101e3d14fb73a6f6e688b0cdbab
+    driverClassName: org.postgresql.Driver
+    initialization-mode: always
+    initialize: true
+    schema: classpath:/schema-postgresql.sql
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+

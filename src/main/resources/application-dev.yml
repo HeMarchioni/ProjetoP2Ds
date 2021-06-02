@@ -1,0 +1,18 @@
+#dev // banco de dados para desenvolvimento
+
+
+spring:
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: si-tech
+    driverClassName: org.postgresql.Driver
+    initialization-mode: always
+    initialize: true
+    schema: classpath:/schema-postgresql.sql
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
