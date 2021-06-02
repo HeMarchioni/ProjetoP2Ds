@@ -1,46 +1,77 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeLeaf.org">
 <head>
-    <title>Lista Produtos</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de fornecedores | ACME</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" th:href="@{../img/favicon/favicon.ico}"/>
+
+    <link rel="stylesheet" th:href="@{../css/styles.css}">
 </head>
 <body>
+	<section class="listagem">
+        <div class="listagem-container">
+            <h1>Listagem de forneedores cadastrados</h1>
 
-<h1> Forneedores Cadastrados</h1>
-    <table class="table table-striped table-primary">
-    	<thead class="ttop">
-        	<tr class="table-info">
-            	<td><b> Codigo do Fornecedor</b></td>
-            	<td><b>Nome</b> </td>
-            	<td><b>Produto Fornecido</b> </td>
-            	<td> Descrição</td>
-            	<td> Contato </td>
-				<td> Telefone</td>
-				<td> Email</td>
-			</tr>
-    	</thead>
-    	<tbody>
-        	<tr th:each="forn : ${fornecedores}">
-            	<td th:text="${forn.cd_Fornecedor}"></td>
-            	<td th:text="${forn.nm_Fornecedor}"></td>
-            	<td th:text="${forn.nm_Produto}"></td>
-				<td th:text="${forn.ds_Fornecedor}"></td>
-				<td th:text="${forn.nm_Contato}"></td>
-				<td th:text="${forn.cd_Telefone}"></td>
-				<td th:text="${forn.ds_Email}"></td>
 
-            	<td>
-            		<a th:href="@{'updForn/' + ${forn.cd_Fornecedor}}">
-            			Editar
-            		</a>
-            	</td>
-            	<td> 
-            		<form th:action="@{'apagarForn/' + ${forn.cd_Fornecedor}}" method=post>
-            			<input type="submit" value="X">
-            		</form>
-            	</td>
-       		</tr>
-     	</tbody>
-    </table>
+            <table class="table table-striped table-primary">
+                <thead class="ttop">
+                    <tr class="table-info">
+                        <td><b> Codigo do Fornecedor</b></td>
+						<td><b>Nome</b> </td>
+						<td><b>Produto Fornecido</b> </td>
+						<td> Descrição</td>
+						<td> Contato </td>
+						<td> Telefone</td>
+						<td> Email</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="forn : ${fornecedores}">
+                        <td th:text="${forn.cd_Fornecedor}"></td>
+						<td th:text="${forn.nm_Fornecedor}"></td>
+						<td th:text="${forn.nm_Produto}"></td>
+						<td th:text="${forn.ds_Fornecedor}"></td>
+						<td th:text="${forn.nm_Contato}"></td>
+						<td th:text="${forn.cd_Telefone}"></td>
+						<td th:text="${forn.ds_Email}"></td>
+        
+                        <td>
+                            <a class="link-padrao" th:href="@{'updForn/' + ${forn.cd_Fornecedor}}">
+                                Editar
+                            </a>
+                        </td>
+                        <td> 
+                            <form th:action="@{'apagarForn/' + ${forn.cd_Fornecedor}}" method=post>
+                                <button class="delete-button" type="submit"><i class="fas fa-times"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                 </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <span>Desenvolvido por Tech Monkeys ©</span>
+        </div>
+    </footer>
+
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
+    <script src="https://kit.fontawesome.com/5ced3d7c26.js" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    
 </body>
 </html>

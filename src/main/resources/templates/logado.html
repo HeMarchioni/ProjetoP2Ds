@@ -1,40 +1,70 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeLeaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-    <head>
-        <title>Logado com Sucesso!</title>
-    </head>
+<html lang="pt-br" xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração | ACME</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" th:href="@{../img/favicon/favicon.ico}"/>
+
+    <link rel="stylesheet" th:href="@{../css/styles.css}">
+</head>
     <body>
-        <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+        <section class="menu-usuario">
+            <div class="menu-usuario-content">
+                <h1 id="gay" th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
 
+                <div class="menu-usuario-wrapper">
+                    <ul>
+                        <li>
+                            <a th:href="@{/cadastroProduto}">
+                                <i class="fas fa-plus"></i> Cadastrar Produtos 
+                            </a>
+                        </li>
+                        <li>
+                            <a th:href="@{/listarProdutos}">
+                                <i class="fas fa-list-ol"></i> Listagem de Produtos 
+                            </a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a th:href="@{/cadastroFornecedor}">
+                                <i class="fas fa-plus"></i> Cadastrar Fornecedores
+                            </a>
+                        </li>
+                        <li>
+                            <a th:href="@{/listarFornecedores}">
+                                <i class="fas fa-list-ol"></i> Listagem de Fornecedores
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <form th:action="@{/logout}" method="post">
+                    <button class="link-padrao-2"type="submit">Sair</button>
+                </form>
+            </div>
+        </section>
 
-        <ul>
-            <li>
-                <a th:href="@{/cadastroProduto}">
-                    Cadastro de Produtos
-                </a>
-            </li>
-            <li>
-                <a th:href="@{/listarProdutos}">
-                    Listagem Produto
-                </a>
-            </li>
-            <li>
-                <a th:href="@{/cadastroFornecedor}">
-                    Cadastra Fornecedor
-                </a>
-            </li>
-            <li>
-                <a th:href="@{/listarFornecedores}">
-                    Listagem Fornecedor
-                </a>
-            </li>
-        </ul>
-
-
-
-
-        <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
-        </form>
+        <footer>
+            <div class="footer-content">
+                <span>Desenvolvido por Tech Monkeys ©</span>
+            </div>
+        </footer>
+    
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous">
+        </script>
+        <script src="https://kit.fontawesome.com/5ced3d7c26.js" crossorigin="anonymous"></script>
+        <script src="js/main.js"></script>
+        
     </body>
 </html>

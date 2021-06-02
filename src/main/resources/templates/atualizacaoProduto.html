@@ -1,24 +1,56 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeLeaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario</title>
+    <title>Atualizar produto | ACME</title>
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" th:href="@{../img/favicon/favicon.ico}"/>
+
+    <link rel="stylesheet" th:href="@{../css/styles.css}">
 </head>
 <body>
 
-<h1> Atualize o produto desejado</h1>
+    <h1 class="atualiza-titulo"> Atualize o produto desejado</h1>
 
-    <form action="#" th:action="@{'/upd/' + ${cd_Produto}}" method=post>
-        Codigo do Produto: <div type="text" th:field="${antigo.cd_Produto}"> </div>
-    	Nome: <input type="text" th:field="${antigo.nm_Produto}">
-        Categoria: <input type="text" th:field="${antigo.nm_Categoria}">
-        Descrição: <input type="text" th:field="${antigo.ds_Produto}">
-        Preco: <input type="text" th:field="${antigo.vl_Produto}">
+    <form class="cadastrar-produto-form" action="#" th:action="@{'/upd/' + ${cd_Produto}}" method=post>
+        <label for="codProduto">Código do produto:</label> 
+        <input id="codProduto" name="codProduto" type="text" th:field="${antigo.cd_Produto}" disabled>
+        
+        <label for="productName">Nome do produto:</label> 
+        <input id="productName" name="productName" type="text" th:field="${antigo.nm_Produto}" placeholder="Tênis Air Max">
 
-    	<input type="submit" value="Cadastrar">
+        <label for="productCategory">Categoria:</label> 
+        <input id="productCategory" name="productCategory" type="text" th:field="${antigo.nm_Categoria}" placeholder="Esportes">
+
+        <label for="productDescription">Descrição:</label> 
+        <textarea id="productDescription" name="productDescription" type="text" th:field="${antigo.ds_Produto}" placeholder="O Tênis Air Max é muito confortável por conta das suas molas internas..." rows="5"></textarea>
+
+        <label for="productPrice">Preço:</label> 
+        <input id="productPrice" name="productPrice" type="text" th:field="${antigo.vl_Produto}" placeholder="R$ 420.00">
+
+        <button type="submit" class="link-padrao">Atualizar produto</button>
     </form>
+
+    <footer>
+        <div class="footer-content">
+            <span>Desenvolvido por Tech Monkeys ©</span>
+        </div>
+    </footer>
+
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
+    <script src="https://kit.fontawesome.com/5ced3d7c26.js" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    
 </body>
 </html>

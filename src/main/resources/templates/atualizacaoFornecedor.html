@@ -1,26 +1,62 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeLeaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario</title>
+    <title>Atualizar fornecedor | ACME</title>
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" th:href="@{../img/favicon/favicon.ico}"/>
+
+    <link rel="stylesheet" th:href="@{../css/styles.css}">
 </head>
 <body>
 
-<h1> Atualize o Fornecedor desejado</h1>
+    <h1 class="atualiza-titulo"> Atualize o Fornecedor desejado</h1>
 
-    <form action="#" th:action="@{'/updForn/' + ${cd_Fornecedor}}" method=post>
-        Codigo do Produto: <div type="text" th:field="${antigo.cd_Fornecedor}"> </div>
-    	Nome: <input type="text" th:field="${antigo.nm_Fornecedor}">
-        Categoria: <input type="text" th:field="${antigo.nm_Produto}">
-        Descrição: <input type="text" th:field="${antigo.ds_Fornecedor}">
-        Preco: <input type="text" th:field="${antigo.nm_Contato}">
-        Descrição: <input type="text" th:field="${antigo.cd_Telefone}">
-        Preco: <input type="text" th:field="${antigo.ds_Email}">
+    <form class="cadastrar-produto-form" action="#" th:action="@{'/updForn/' + ${cd_Fornecedor}}" method=post>
+        <label for="codFornecedor">Código do fornecedor:</label> 
+        <input id="codFornecedor" name="codFornecedor" type="text" th:field="${antigo.cd_Fornecedor}" disabled>
 
-    	<input type="submit" value="Cadastrar">
+        <label for="fornecedor">Nome do fornecedor:</label> 
+        <input id="fornecedor" name="fornecedor" type="text" th:field="${antigo.nm_Fornecedor}" placeholder="Lojas Renner">
+
+        <label for="fornecido">Produto fornecido:</label> 
+        <input id="fornecido" name="fornecido" type="text" th:field="${antigo.nm_Produto}" placeholder="Tênis Air Max">
+
+        <label for="descricao">Descrição:</label> 
+        <textarea id="descricao" name="descricao" type="text" th:field="${antigo.ds_Fornecedor}" placeholder="Descrição do fornecedor" rows="5"></textarea>
+
+        <label for="contato">Contato:</label> 
+        <input id="contato" name="contato" type="text" th:field="${antigo.nm_Contato}" placeholder="Nome do representante comercial">
+
+        <label for="telefone">Telefone:</label> 
+        <input id="telefone" name="telefone" type="tel" th:field="${antigo.cd_Telefone}" placeholder="13 99999-9999">
+
+        <label for="email">Email:</label> 
+        <input id="email" name="email" type="email" th:field="${antigo.ds_Email}" placeholder="mail@teste.com">
+
+        <button type="submit" class="link-padrao">atualizar fornecedor</button>
     </form>
+
+    <footer>
+        <div class="footer-content">
+            <span>Desenvolvido por Tech Monkeys ©</span>
+        </div>
+    </footer>
+
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
+    <script src="https://kit.fontawesome.com/5ced3d7c26.js" crossorigin="anonymous"></script>
+    <script src="dist/js/main.js"></script>
+
 </body>
 </html>
