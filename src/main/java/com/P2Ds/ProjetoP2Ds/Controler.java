@@ -32,8 +32,9 @@ public class Controler {
         return "produto.html";
     }
 
+    // ============Cadastro =========================================================================
 
-    @GetMapping("/cadastro")
+    @GetMapping("/cadastro")         // -> Caminho para cadastro de cliente
     public String formCliente(Model model) {
         model.addAttribute("cliente",new Cliente());
         return "cadastro";
@@ -46,6 +47,16 @@ public class Controler {
         cs.inserirCliente(cli);
         return "sucesso";
     }
+
+    // ============ Sobre ====================================================================
+
+    @GetMapping("/sobre")                    // -> Caminho para a pagina Sobre
+    public String sobreAcme() {
+        return "sobre.html";
+    }
+
+
+
 
 
     // - Parte login -==================================================
