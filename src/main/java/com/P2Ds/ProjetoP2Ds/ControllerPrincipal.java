@@ -1,8 +1,7 @@
 package com.P2Ds.ProjetoP2Ds;
 
 
-import com.P2Ds.model.Cliente.Cliente;
-import com.P2Ds.model.Cliente.ClienteService;
+
 import com.P2Ds.model.Contato.Contato;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -15,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 @ComponentScan("com.P2Ds.model")      //--> VAI PROCURAR NA PASTA ANTES COM.MODEL
-public class Controler {
+public class ControllerPrincipal {
 
 
     @Autowired
@@ -32,21 +31,7 @@ public class Controler {
         return "produto.html";
     }
 
-    // ============Cadastro =========================================================================
 
-    @GetMapping("/cadastro")         // -> Caminho para cadastro de cliente
-    public String formCliente(Model model) {
-        model.addAttribute("cliente",new Cliente());
-        return "cadastro";
-    }
-
-    @PostMapping("/cadastro")
-    public String postCliente(@ModelAttribute Cliente cli,
-                              Model model) {
-        ClienteService cs = context.getBean(ClienteService.class);
-        cs.inserirCliente(cli);
-        return "sucesso";
-    }
 
     // ============ Sobre ====================================================================
 

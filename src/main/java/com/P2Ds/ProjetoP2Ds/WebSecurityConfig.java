@@ -34,8 +34,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .permitAll()
                 .and()
                     .logout()
+                    .deleteCookies("JSESSIONID")
                     .logoutSuccessUrl("/")
-                    .permitAll();
+                    .permitAll()
+                .and()
+                    .rememberMe().key("x*gEAEjvq7roOb$NmN1EVd!k8bp%VF")
+        ;
     }
 
 
@@ -45,16 +49,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication()
-                .dataSource(dataSource)
-                .passwordEncoder(passwordEncoder())
-                .usersByUsernameQuery("select ds_Email,cd_Senha, enabled from cliente where ds_Email=?")
-                .authoritiesByUsernameQuery("select ds_Email, authority from cliente where ds_Email=?")
+                    .dataSource(dataSource)
+                    .passwordEncoder(passwordEncoder())
+                    .usersByUsernameQuery("select ds_Email,cd_Senha, enabled from cliente where ds_Email=?")
+                    .authoritiesByUsernameQuery("select ds_Email, authority from cliente where ds_Email=?")
                 .and()
-                .inMemoryAuthentication()
-                .passwordEncoder(passwordEncoder())
-                .withUser("master@acme")     // -> Usuario Master
-                .password("$2a$10$1sbpaSZCSTrLjvKL91GlBuP/ytKu5ult5PwPpO8ye02nEZF4pBJt2")  // -> senha master de acesso
-                .authorities("USER");
+                    .inMemoryAuthentication()
+                    .passwordEncoder(passwordEncoder())
+                    .withUser("master@acme")     // -> Usuario Master
+                    .password("$2a$10$1sbpaSZCSTrLjvKL91GlBuP/ytKu5ult5PwPpO8ye02nEZF4pBJt2")  // -> senha master de acesso
+                    .authorities("USER");
     }
 
 
