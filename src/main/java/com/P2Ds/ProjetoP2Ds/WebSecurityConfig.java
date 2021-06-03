@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -26,7 +27,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                     .authorizeRequests()
-                    .antMatchers("/", "/cadastro","/detalheProd","/contato","/sobre","/css/**","/img/**","/js/**").permitAll()
+                    .antMatchers("/", "/cadastro","/detalheProd","/contato","/sobre").permitAll()  // -> permitida a todos
                     .anyRequest().authenticated()
                 .and()
                     .formLogin()
@@ -36,12 +37,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .logout()
                     .deleteCookies("JSESSIONID")
                     .logoutSuccessUrl("/")
-                    .permitAll()
+                    .invalidateHttpSession(true)
                 .and()
                     .rememberMe().key("x*gEAEjvq7roOb$NmN1EVd!k8bp%VF")
         ;
     }
 
+
+    @Override
+    public void configure(WebSecurity web) throws Exception {  // -> pastas liberadas
+        web
+                .ignoring()
+                .antMatchers("/css/**")
+                .antMatchers("/img/**")
+                .antMatchers("/js/**");
+    }
+
+
+   // Autenticação =============================================================================================================
 
     @Autowired
     DataSource dataSource;

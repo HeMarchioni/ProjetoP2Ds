@@ -75,6 +75,9 @@
 
 
                 <button class="link-padrao" type="submit">ENTRAR</button>
+
+                <input type="hidden" th:name="${_csrf.parameterName}"  th:value="${_csrf.token}" />
+
               </form>
               <div class="login-criar-conta">
                   <span>Ainda não tem uma conta? <a href="#">Registre-se!</a></span>

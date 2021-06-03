@@ -3,7 +3,7 @@ server:
 
 spring:
   profiles:
-    active: prod    # -> escolha o banco de dados que ira utilizar (dev -> desenvolvimento) e (prod -> produção)
+    active: dev    # -> escolha o banco de dados que ira utilizar (dev -> desenvolvimento) e (prod -> produção)
 
 
 
