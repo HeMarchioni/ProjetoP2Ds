@@ -43,7 +43,7 @@ public class FornecedorController {
     public String buscaId(@PathVariable("cd_Fornecedor") int cd_Fornecedor, Model model){
         FornecedorService fornService = context.getBean(FornecedorService.class);
         Map<String,Object> FornecedorMap = fornService.getCd_Fornecedor(cd_Fornecedor);
-        Fornecedor fornecedor = new Fornecedor((int)FornecedorMap.get("cd_Fornecedor"),(String) FornecedorMap.get("nm_Fornecedor"),(String) FornecedorMap.get("nm_Produto"),
+        Fornecedor fornecedor = new Fornecedor((int)FornecedorMap.get("cd_Fornecedor"),(String) FornecedorMap.get("nm_Fornecedor"),
                 (String) FornecedorMap.get("ds_Fornecedor"),(String) FornecedorMap.get("nm_Contato"),(String)FornecedorMap.get("cd_Telefone"),(String)FornecedorMap.get("ds_Email"));
         model.addAttribute("forne",fornecedor);
         return "produtosucesso";
@@ -72,7 +72,7 @@ public class FornecedorController {
     public String updateForm(@PathVariable("cd_Fornecedor") int cd_Fornecedor, Model model){
         FornecedorService fornService = context.getBean(FornecedorService.class);
         Map<String,Object> antigo = fornService.getCd_Fornecedor(cd_Fornecedor);
-        Fornecedor ForneAntigo = new Fornecedor((int)antigo.get("cd_Fornecedor"),(String) antigo.get("nm_Fornecedor"),(String) antigo.get("nm_Produto"),
+        Fornecedor ForneAntigo = new Fornecedor((int)antigo.get("cd_Fornecedor"),(String) antigo.get("nm_Fornecedor"),
                 (String) antigo.get("ds_Fornecedor"),(String) antigo.get("nm_Contato"),(String)antigo.get("cd_Telefone"),(String)antigo.get("ds_Email"));
         model.addAttribute("antigo", ForneAntigo);
         model.addAttribute("cd_Fornecedor", cd_Fornecedor);

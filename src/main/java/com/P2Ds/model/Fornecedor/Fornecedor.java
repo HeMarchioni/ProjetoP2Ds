@@ -4,7 +4,6 @@ public class Fornecedor {
 
     private int cd_Fornecedor;
     private String nm_Fornecedor
-    ,nm_Produto
     ,ds_Fornecedor
     ,nm_Contato
     ,cd_Telefone
@@ -15,10 +14,9 @@ public class Fornecedor {
     }
 
 
-    public Fornecedor(int cd_Fornecedor, String nm_Fornecedor, String nm_Produto, String ds_Fornecedor, String nm_Contato, String cd_Telefone, String ds_Email) {
+    public Fornecedor(int cd_Fornecedor, String nm_Fornecedor,String ds_Fornecedor, String nm_Contato, String cd_Telefone, String ds_Email) {
         this.cd_Fornecedor = cd_Fornecedor;
         this.nm_Fornecedor = nm_Fornecedor;
-        this.nm_Produto = nm_Produto;
         this.ds_Fornecedor = ds_Fornecedor;
         this.nm_Contato = nm_Contato;
         this.cd_Telefone = cd_Telefone;
@@ -40,14 +38,6 @@ public class Fornecedor {
 
     public void setNm_Fornecedor(String nm_Fornecedor) {
         this.nm_Fornecedor = nm_Fornecedor;
-    }
-
-    public String getNm_Produto() {
-        return nm_Produto;
-    }
-
-    public void setNm_Produto(String nm_Produto) {
-        this.nm_Produto = nm_Produto;
     }
 
     public String getDs_Fornecedor() {
