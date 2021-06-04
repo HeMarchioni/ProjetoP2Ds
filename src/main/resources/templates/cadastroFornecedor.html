@@ -33,6 +33,13 @@
             </ul>
         </nav>
     </header>
+
+    <div class="cadastro-header">
+        <a th:href="@{/logado}"> < Voltar ao Menu </a>
+        <h1>Cadastrar Fornecedor</h1>
+    </div>
+
+
     <form class="cadastrar-produto-form" action="#" th:action="@{/cadastroFornecedor}" th:object="${fornecedor}" method=post>
     	<label for="fornecedor">Nome do fornecedor:</label> 
         <input id="fornecedor" name="fornecedor" type="text" th:field="*{nm_Fornecedor}" placeholder="Lojas Renner">
@@ -62,11 +69,13 @@
     </footer>
 
     <script
-        src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous">
     </script>
     <script src="https://kit.fontawesome.com/5ced3d7c26.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.mask.min.js"></script>
     <script src="js/main.js"></script>
     
 </body>

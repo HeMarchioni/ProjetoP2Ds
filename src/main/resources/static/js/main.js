@@ -50,3 +50,124 @@ function detalhes(){
         $('#mostrar-descricao').toggleClass('button-rotate');
     })
 }
+
+
+function cadastroProduto() {
+    $('.cadastrar-produto-form').validate({
+        rules: {
+            productName: {
+                required: true,
+                maxlength: 50,
+               
+            },
+            productCategory: {
+                required: true,
+                maxlength: 20,
+               
+            },
+            productDescription: {
+                required: true,
+                maxlength: 200,
+               
+            },
+            productPrice: {
+                required: true,
+                maxlength: 20,
+               
+            },
+        }, 
+        messages: {
+            productName: {
+                required: 'Preencha este campo.',
+                maxlength: 'Esse campo tem um limite de 50 caractéres.'
+            },
+            productCategory: {
+                required: 'Preencha este campo.',
+                maxlength: 'Esse campo tem um limite de 20 caractéres.'
+            },  
+            productDescription: {
+                required: 'Preencha este campo.',
+                maxlength: 'Esse campo tem um limite de 200 caractéres.'
+            },  
+            productPrice: {
+                required: 'Preencha este campo.',
+                maxlength: 'Esse campo tem um limite de 20 caractéres.'
+            },  
+        }
+    });
+
+    $('#productPrice').mask("##0.00", {reverse: true});
+}
+
+function cadastroFornecedor() {
+    $('.cadastrar-produto-form').validate({
+        rules: {
+            fornecedor: {
+                required: true,
+                maxlength: 50,
+            },
+            fornecido: {
+                required: true,
+                maxlength: 50,
+            },
+            descricao: {
+                required: true,
+                maxlength: 200,
+            },
+            contato: {
+                required: true,
+                maxlength: 50,
+            },
+            telefone: {
+                required: true,
+                maxlength: 15,
+                minlength: 14,
+            },
+            email: {
+                required: true,
+                maxlength: 100,
+                email: true
+            },
+
+        },
+        messages: {
+            fornecedor: {
+                required: 'Preencha esse campo.',
+                maxlength: 'Esse campo aceita no máximo 50 caractéres'
+            },
+            fornecido: {
+                required: 'Preencha esse campo.',
+                maxlength: 'Esse campo aceita no máximo 50 caractéres'
+            },
+            descricao: {
+                required: 'Preencha esse campo.',
+                maxlength: 'Esse campo aceita no máximo 200 caractéres'
+            },
+            contato: {
+                required: 'Preencha esse campo.',
+                maxlength: 'Esse campo aceita no máximo 50 caractéres'
+            },
+            telefone: {
+                required: 'Preencha esse campo.',
+                maxlength: 'Insira um telefone válido.',
+                minlength: 'Insira um telefone válido.',
+            },
+            email: {
+                required: 'Preencha esse campo.',
+                maxlength: 'Esse campo aceita no máximo 100 caractéres',
+                email: 'Digite um email válido'
+            },
+        }
+    })
+
+    //telefone
+    var SPMaskBehavior = function (val) {
+        return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+      },
+      spOptions = {
+        onKeyPress: function(val, e, field, options) {
+            field.mask(SPMaskBehavior.apply({}, arguments), options);
+          }
+      };
+      $('#telefone').mask(SPMaskBehavior, spOptions);
+}
