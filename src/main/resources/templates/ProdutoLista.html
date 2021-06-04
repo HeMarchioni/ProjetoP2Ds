@@ -44,8 +44,12 @@
                     <tr class="table-info">
                         <td><b> Codigo do produto</b></td>
                         <td><b>Nome</b> </td>
+                        <td><b>Genero</b> </td>
                         <td><b>Categoria</b> </td>
                         <td> Descrição do Produto</td>
+                        <td> Marca</td>
+                        <td> Cor</td>
+                        <td> Tamanho</td>
                         <td> Preço </td>
                     </tr>
                 </thead>
@@ -53,8 +57,12 @@
                     <tr th:each="prod : ${produtos}">
                         <td th:text="${prod.cd_Produto}"></td>
                         <td th:text="${prod.nm_Produto}"></td>
+                        <td th:text="${prod.nm_Genero}"></td>
                         <td th:text="${prod.nm_Categoria}"></td>
                         <td th:text="${prod.ds_Produto}"></td>
+                        <td th:text="${prod.nm_Marca}"></td>
+                        <td th:text="${prod.nm_Cor}"></td>
+                        <td th:text="${prod.ds_Tamanho}"></td>
                         <td th:text="${prod.vl_Produto}"></td>
         
                         <td>

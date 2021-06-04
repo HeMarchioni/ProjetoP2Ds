@@ -29,11 +29,15 @@ public class ProdutoDAO {
 
 
     public void inserirProduto(Produto produto) {     // -> cadastrar produto no banco de dados
-        String sql = "INSERT INTO produto(nm_Produto,nm_Categoria,ds_Produto,vl_Produto) VALUES (?,?,?,?)" ;
+        String sql = "INSERT INTO produto(nm_Produto,nm_Genero,nm_Categoria,ds_Produto,nm_Marca,nm_Cor,ds_Tamanho,vl_Produto) VALUES (?,?,?,?,?,?,?,?)" ;
         jdbc.update(sql, new Object[]{
                 produto.getNm_Produto(),
+                produto.getNm_Genero(),
                 produto.getNm_Categoria(),
                 produto.getDs_Produto(),
+                produto.getNm_Marca(),
+                produto.getNm_Cor(),
+                produto.getDs_Tamanho(),
                 produto.getVl_Produto()
         });
     }
@@ -60,9 +64,17 @@ public class ProdutoDAO {
 
 
     public void updateProduto(int cd_Produto,Produto produto) {   // -> atualizar dados do produto no banco
-        String sql = "UPDATE produto SET nm_Produto = ?, nm_Categoria = ?, ds_Produto = ?, vl_Produto = ?  WHERE cd_Produto = ?";
+        String sql = "UPDATE produto SET nm_Produto = ?,nm_Genero = ?, nm_Categoria = ?, ds_Produto = ?, nm_Marca = ?, nm_Cor = ?, ds_Tamanho = ?, vl_Produto = ?  WHERE cd_Produto = ?";
         jdbc.update(sql, new Object[]{
-                produto.getNm_Produto(), produto.getNm_Categoria(),produto.getDs_Produto(),produto.getVl_Produto(),cd_Produto
+                produto.getNm_Produto(),
+                produto.getNm_Genero(),
+                produto.getNm_Categoria(),
+                produto.getDs_Produto(),
+                produto.getNm_Marca(),
+                produto.getNm_Cor(),
+                produto.getDs_Tamanho(),
+                produto.getVl_Produto(),
+                cd_Produto
         });
     }
 

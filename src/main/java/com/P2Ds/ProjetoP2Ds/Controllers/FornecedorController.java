@@ -1,4 +1,4 @@
-package com.P2Ds.ProjetoP2Ds;
+package com.P2Ds.ProjetoP2Ds.Controllers;
 
 
 import com.P2Ds.model.Fornecedor.Fornecedor;

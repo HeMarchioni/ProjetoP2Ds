@@ -48,6 +48,15 @@
             placeholder="Tênis Air Max"
         >
 
+        <label for="productGenero">Genero:</label>
+        <input
+                id="productGenero" name="productGenero"
+                type="text"
+                th:field="*{nm_Genero}"
+                placeholder="Maculino"
+        >
+
+
         <label for="productCategory">Categoria:</label> 
     	<input 
             id="productCategory" name="productCategory"
@@ -65,7 +74,32 @@
             rows="5"
         ></textarea>
 
-        <label for="productPrice">Preço:</label> 
+        <label for="productMarca">Marca:</label>
+        <input
+                id="productMarca" name="productMarca"
+                type="text"
+                th:field="*{nm_Marca}"
+                placeholder="Adidas / Nike"
+        >
+        <label for="productCor">Cor:</label>
+        <input
+                id="productCor" name="productCor"
+                type="text"
+                th:field="*{nm_Cor}"
+                placeholder="Vermelho"
+        >
+
+        <label for="productTamanho">Tamanho:</label>
+        <input
+                id="productTamanho" name="productTamanho"
+                type="text"
+                th:field="*{ds_Tamanho}"
+                placeholder="41"
+        >
+
+
+
+        <label for="productPrice">Preço:</label>
         <input 
             id="productPrice" name="productPrice"
             type="text" 

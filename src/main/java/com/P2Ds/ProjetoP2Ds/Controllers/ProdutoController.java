@@ -1,4 +1,4 @@
-package com.P2Ds.ProjetoP2Ds;
+package com.P2Ds.ProjetoP2Ds.Controllers;
 
 
 import com.P2Ds.model.Produto.Produto;
@@ -43,7 +43,9 @@ public class ProdutoController {
         ProdutoService prodService = context.getBean(ProdutoService.class);
         Map<String,Object> produtoMap = prodService.getCd_Produto(cd_Produto);
         Produto produto = new Produto((int)produtoMap.get("cd_Produto"),(String)produtoMap.get("nm_Produto"),
-                (String)produtoMap.get("nm_Categoria"),(String)produtoMap.get("ds_Produto"),(float)produtoMap.get("vl_Produto"));
+                (String) produtoMap.get("nm_Genero"),(String)produtoMap.get("nm_Categoria"),(String)produtoMap.get("ds_Produto"),
+                (String)produtoMap.get("nm_Marca"),(String) produtoMap.get("nm_Cor"),
+                (String) produtoMap.get("ds_Tamanho"),(float)produtoMap.get("vl_Produto"));
         model.addAttribute("prod",produto);
         return "produtosucesso";
     }
@@ -54,7 +56,7 @@ public class ProdutoController {
         ProdutoService prodService = context.getBean(ProdutoService.class);
         List<Map<String,Object>> produtos = prodService.getListaProdutos();
         model.addAttribute("produtos",produtos);
-        return "formlista";
+        return "ProdutoLista";
     }
 
     @PostMapping("/apagar/{cd_Produto}")    // -> apagar produto no banco de dados
@@ -72,7 +74,9 @@ public class ProdutoController {
         ProdutoService prodService = context.getBean(ProdutoService.class);
         Map<String,Object> antigo = prodService.getCd_Produto(cd_Produto);
         Produto prodAntigo = new Produto((int)antigo.get("cd_Produto"),(String)antigo.get("nm_Produto"),
-                (String)antigo.get("nm_Categoria"),(String)antigo.get("ds_Produto"),(float)antigo.get("vl_Produto"));
+                (String) antigo.get("nm_Genero"),(String)antigo.get("nm_Categoria"),(String)antigo.get("ds_Produto"),
+                (String)antigo.get("nm_Marca"),(String) antigo.get("nm_Cor"),
+                (String) antigo.get("ds_Tamanho"),(float)antigo.get("vl_Produto"));
         model.addAttribute("antigo",prodAntigo);
         model.addAttribute("cd_Produto",cd_Produto);
         return "atualizacaoProduto";
