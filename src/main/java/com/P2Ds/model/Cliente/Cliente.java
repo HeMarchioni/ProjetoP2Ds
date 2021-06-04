@@ -9,8 +9,9 @@ import java.security.NoSuchAlgorithmException;
 
 public class Cliente {
 
-    private Long id;
+    private Long cd_Cliente;
     private String cd_Cpf,nm_Cliente,ds_Email,ds_Endereco,ds_Cidade,sg_Uf,cd_Cep,cd_Telefone,cd_Senha;
+    private boolean enabled;
 
 
     public Cliente() {
@@ -18,8 +19,8 @@ public class Cliente {
     }
 
 
-    public Cliente(Long id, String cd_Cpf, String nm_Cliente, String ds_Email, String ds_Endereco, String ds_Cidade, String sg_Uf, String cd_Cep, String cd_Telefone, String cd_Senha) throws UnsupportedEncodingException, NoSuchAlgorithmException {
-        this.id = id;
+    public Cliente(Long cd_Cliente, String cd_Cpf, String nm_Cliente, String ds_Email, String ds_Endereco, String ds_Cidade, String sg_Uf, String cd_Cep, String cd_Telefone, String cd_Senha, boolean enabled) {
+        this.cd_Cliente = cd_Cliente;
         this.cd_Cpf = cd_Cpf;
         this.nm_Cliente = nm_Cliente;
         this.ds_Email = ds_Email;
@@ -29,17 +30,18 @@ public class Cliente {
         this.cd_Cep = cd_Cep;
         this.cd_Telefone = cd_Telefone;
         this.cd_Senha = cd_Senha;
+        this.enabled = enabled;
     }
 
 
 
 
-    public Long getId() {
-        return id;
+    public Long getCd_Cliente() {
+        return cd_Cliente;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCd_Cliente(Long cd_Cliente) {
+        this.cd_Cliente = cd_Cliente;
     }
 
     public String getCd_Cpf() {
@@ -112,5 +114,13 @@ public class Cliente {
 
     public void setCd_Senha(String cd_Senha) {
         this.cd_Senha = cd_Senha;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 }
