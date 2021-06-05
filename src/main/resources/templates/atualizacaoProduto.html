@@ -49,8 +49,6 @@
         data-rule-maxlength=50 data-msg-maxlength="Máximo de 50 caractéres."
         id="productName" name="productName" type="text" th:field="${antigo.nm_Produto}" placeholder="Tênis Air Max">
 
-        <label for="productCategory">Categoria:</label> 
-        <input id="productCategory" name="productCategory" type="text" th:field="${antigo.nm_Categoria}" placeholder="Esportes">
 
         <label for="productGenero">Genero:</label>
         <select
@@ -74,11 +72,11 @@
             required data-msg="Preencha este campo."
         >
             <option value="Botas">Botas</option>
-            <option value="Chinelos e Sandalias">Chinelos e Sandálias</option>
+            <option value="Chinelos e Sandálias">Chinelos e Sandálias</option>
             <option value="Chuteiras">Chuteiras</option>
             <option value="Sapatilhas">Sapatilhas</option>
-            <option value="Tenis">Tênis</option>
-            <option value="Tenis Performance">Tênis Performance</option>
+            <option value="Tênis">Tênis</option>
+            <option value="Tênis Performance">Tênis Performance</option>
         </select>
 
         <label for="productDescription">Descrição:</label> 
@@ -106,7 +104,18 @@
                 required data-msg="Preencha este campo."
                 data-rule-maxlength=20 data-msg-maxlength="Máximo de 20 caractéres."
         >
-        
+
+
+        <label for="productTamanho">Tamanho:</label>
+        <input
+                id="productTamanho" name="productTamanho"
+                type="text"
+                th:field="*{antigo.ds_Tamanho}"
+                placeholder="41"
+                required data-msg="Preencha este campo."
+                data-rule-minlength=2 data-msg-minlength="Preencha com um tamanho válido."
+                data-rule-maxlength=2 data-msg-maxlength="Preencha com um tamanho válido."
+        >
 
         <label for="productPrice">Preço:</label> 
         <input 

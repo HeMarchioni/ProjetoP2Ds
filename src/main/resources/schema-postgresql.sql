@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS produto (
     nm_Cor varchar (50),
     ds_Tamanho char(4),
     vl_Produto real not null,
-    CONSTRAINT Categorias CHECK (nm_Categoria IN ('Botas', 'Chinelos e Sandalias','Chuteiras', 'Sapatilhas','Tenis', 'Tenis Performance')),
+    CONSTRAINT Categorias CHECK (nm_Categoria IN ('Botas','Chinelos e Sandálias','Chuteiras', 'Sapatilhas','Tênis', 'Tênis Performance')),
     CONSTRAINT Generos CHECK (nm_Genero IN ('Masculino', 'Feminino', 'Infantil'))
     );
 
