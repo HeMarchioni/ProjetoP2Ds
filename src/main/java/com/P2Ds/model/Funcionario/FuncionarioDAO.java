@@ -44,7 +44,7 @@ public class FuncionarioDAO {
         obj[7] = funcionario.getCd_Cep();
         obj[8] = funcionario.getCd_Telefone();
         obj[9] = passwordEncoder.encode(funcionario.getCd_Senha());
-        obj[10] = funcionario.getCd_Telefone();
+        obj[10] = funcionario.getAuthority();
         jdbc.update(sql, obj);
     }
 

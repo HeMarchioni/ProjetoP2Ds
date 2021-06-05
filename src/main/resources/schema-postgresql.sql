@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS funcionario (
     cd_Senha varchar (256) not null,
     enabled boolean not null default true,
     authority varchar(20) not null,
-    CONSTRAINT autoridade_check CHECK (authority IN ('ADM', 'ATEND'))
+    CONSTRAINT autoridade_check CHECK (authority IN ('ADMINISTRATIVO', 'ATENDENTE'))
 );
 
 
