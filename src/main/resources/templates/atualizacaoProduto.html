@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" th:href="@{../css/styles.css}">
 </head>
-<body>
+<body onload="cadastroProduto()">
     <header class="home-header-container">
         <div class="home-header-cadastro">
             <ul>
@@ -44,16 +44,75 @@
         <input id="codProduto" name="codProduto" type="text" th:field="${antigo.cd_Produto}" disabled>
         
         <label for="productName">Nome do produto:</label> 
-        <input id="productName" name="productName" type="text" th:field="${antigo.nm_Produto}" placeholder="Tênis Air Max">
+        <input 
+        required data-msg="Preencha este campo."
+        data-rule-maxlength=50 data-msg-maxlength="Máximo de 50 caractéres."
+        id="productName" name="productName" type="text" th:field="${antigo.nm_Produto}" placeholder="Tênis Air Max">
 
         <label for="productCategory">Categoria:</label> 
         <input id="productCategory" name="productCategory" type="text" th:field="${antigo.nm_Categoria}" placeholder="Esportes">
 
+        <label for="productGenero">Genero:</label>
+        <select
+            id="productGenero" name="productGenero"
+            type="text"
+            th:field="${antigo.nm_Genero}"
+            placeholder="Maculino"
+            required data-msg="Preencha este campo."
+        >
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Infantil">Infantil</option>
+        </select>
+
+        <label for="productCategory">Categoria:</label> 
+    	<select 
+            id="productCategory" name="productCategory"
+            type="text" 
+            th:field="${antigo.nm_Categoria}" 
+            placeholder="Esportes"
+            required data-msg="Preencha este campo."
+        >
+            <option value="Botas">Botas</option>
+            <option value="Chinelos e Sandalias">Chinelos e Sandálias</option>
+            <option value="Chuteiras">Chuteiras</option>
+            <option value="Sapatilhas">Sapatilhas</option>
+            <option value="Tenis">Tênis</option>
+            <option value="Tenis Performance">Tênis Performance</option>
+        </select>
+
         <label for="productDescription">Descrição:</label> 
-        <textarea id="productDescription" name="productDescription" type="text" th:field="${antigo.ds_Produto}" placeholder="O Tênis Air Max é muito confortável por conta das suas molas internas..." rows="5"></textarea>
+        <textarea 
+            required data-msg="Preencha este campo."
+            data-rule-maxlength=200 data-msg-maxlength="Máximo de 200 caractéres."
+            id="productDescription" name="productDescription" type="text" th:field="${antigo.ds_Produto}" placeholder="O Tênis Air Max é muito confortável por conta das suas molas internas..." rows="5"></textarea>
+
+
+        <label for="productMarca">Marca:</label>
+        <input
+                id="productMarca" name="productMarca"
+                type="text"
+                th:field="${antigo.nm_Marca}"
+                placeholder="Adidas / Nike"
+                required data-msg="Preencha este campo."
+                data-rule-maxlength=50 data-msg-maxlength="Máximo de 50 caractéres."
+        >
+        <label for="productCor">Cor:</label>
+        <input
+                id="productCor" name="productCor"
+                type="text"
+                th:field="${antigo.nm_Cor}"
+                placeholder="Vermelho"
+                required data-msg="Preencha este campo."
+                data-rule-maxlength=20 data-msg-maxlength="Máximo de 20 caractéres."
+        >
+        
 
         <label for="productPrice">Preço:</label> 
-        <input id="productPrice" name="productPrice" type="text" th:field="${antigo.vl_Produto}" placeholder="R$ 420.00">
+        <input 
+        required data-msg="Preencha este campo."
+        data-rule-maxlength=20 data-msg-maxlength="Verifique se o valor do produto está correto."
+        id="productPrice" name="productPrice" type="text" th:field="${antigo.vl_Produto}" placeholder="R$ 420.00">
 
         <button type="submit" class="link-padrao">Atualizar produto</button>
     </form>
