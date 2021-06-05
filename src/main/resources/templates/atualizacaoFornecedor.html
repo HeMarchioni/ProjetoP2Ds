@@ -50,6 +50,7 @@
         data-rule-maxlength=50 data-msg-maxlength="Máximo de 50 caractéres"   
         id="fornecedor" name="fornecedor" type="text" th:field="${antigo.nm_Fornecedor}" placeholder="Lojas Renner">
 
+<<<<<<< HEAD
         <label for="fornecido">Produto fornecido:</label> 
         <input 
             required data-msg="Preencha este campo."
@@ -61,6 +62,10 @@
             required data-msg="Preencha este campo."
             data-rule-maxlength=200 data-msg-maxlength="Máximo de 200 caractéres"
             id="descricao" name="descricao" type="text" th:field="${antigo.ds_Fornecedor}" placeholder="Descrição do fornecedor" rows="5"></textarea>
+=======
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao" type="text" th:field="${antigo.ds_Fornecedor}" placeholder="Descrição do fornecedor" rows="5"></textarea>
+>>>>>>> e762ea3dd1b5a62349537cab946db5288b1e276f
 
         <label for="contato">Contato:</label> 
         <input 

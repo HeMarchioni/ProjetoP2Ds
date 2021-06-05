@@ -29,10 +29,9 @@ public class FornecedorDAO {
 
 
     public void inserirFornecedor(Fornecedor fornecedor) {     // -> cadastrar fornecedor no banco de dados
-        String sql = "INSERT INTO Fornecedor(nm_Fornecedor,nm_Produto,ds_Fornecedor,nm_Contato,cd_Telefone,ds_Email) VALUES (?,?,?,?,?,?)" ;
+        String sql = "INSERT INTO Fornecedor(nm_Fornecedor,ds_Fornecedor,nm_Contato,cd_Telefone,ds_Email) VALUES (?,?,?,?,?)" ;
         jdbc.update(sql, new Object[]{
                 fornecedor.getNm_Fornecedor(),
-                fornecedor.getNm_Produto(),
                 fornecedor.getDs_Fornecedor(),
                 fornecedor.getNm_Contato(),
                 fornecedor.getCd_Telefone(),
@@ -62,10 +61,9 @@ public class FornecedorDAO {
 
 
     public void updateFornecedor(int cd_Fornecedor,Fornecedor fornecedor) {   // -> atualizar dados do fornecedor no banco
-        String sql = "UPDATE Fornecedor SET nm_Fornecedor = ?, nm_Produto = ?, ds_Fornecedor = ?, nm_Contato = ? , cd_Telefone = ?, ds_Email = ? WHERE cd_Fornecedor = ?";
+        String sql = "UPDATE Fornecedor SET nm_Fornecedor = ?, ds_Fornecedor = ?, nm_Contato = ? , cd_Telefone = ?, ds_Email = ? WHERE cd_Fornecedor = ?";
         jdbc.update(sql, new Object[]{
                 fornecedor.getNm_Fornecedor(),
-                fornecedor.getNm_Produto(),
                 fornecedor.getDs_Fornecedor(),
                 fornecedor.getNm_Contato(),
                 fornecedor.getCd_Telefone(),

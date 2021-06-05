@@ -48,7 +48,6 @@
                     <tr class="table-info">
                         <td><b> Codigo do Fornecedor</b></td>
 						<td><b>Nome</b> </td>
-						<td><b>Produto Fornecido</b> </td>
 						<td> Descrição</td>
 						<td> Contato </td>
 						<td> Telefone</td>
@@ -59,7 +58,6 @@
                     <tr th:each="forn : ${fornecedores}">
                         <td th:text="${forn.cd_Fornecedor}"></td>
 						<td th:text="${forn.nm_Fornecedor}"></td>
-						<td th:text="${forn.nm_Produto}"></td>
 						<td th:text="${forn.ds_Fornecedor}"></td>
 						<td th:text="${forn.nm_Contato}"></td>
 						<td th:text="${forn.cd_Telefone}"></td>
