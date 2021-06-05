@@ -53,112 +53,16 @@ function detalhes(){
 
 
 function cadastroProduto() {
-    $('.cadastrar-produto-form').validate({
-        rules: {
-            productName: {
-                required: true,
-                maxlength: 50,
-               
-            },
-            productCategory: {
-                required: true,
-                maxlength: 20,
-               
-            },
-            productDescription: {
-                required: true,
-                maxlength: 200,
-               
-            },
-            productPrice: {
-                required: true,
-                maxlength: 20,
-               
-            },
-        }, 
-        messages: {
-            productName: {
-                required: 'Preencha este campo.',
-                maxlength: 'Esse campo tem um limite de 50 caractéres.'
-            },
-            productCategory: {
-                required: 'Preencha este campo.',
-                maxlength: 'Esse campo tem um limite de 20 caractéres.'
-            },  
-            productDescription: {
-                required: 'Preencha este campo.',
-                maxlength: 'Esse campo tem um limite de 200 caractéres.'
-            },  
-            productPrice: {
-                required: 'Preencha este campo.',
-                maxlength: 'Esse campo tem um limite de 20 caractéres.'
-            },  
-        }
-    });
+    $('.cadastrar-produto-form').validate();
 
     $('#productPrice').mask("##0.00", {reverse: true});
+
+    $('#productTamanho').mask("00");
 }
 
 function cadastroFornecedor() {
-    $('.cadastrar-produto-form').validate({
-        rules: {
-            fornecedor: {
-                required: true,
-                maxlength: 50,
-            },
-            fornecido: {
-                required: true,
-                maxlength: 50,
-            },
-            descricao: {
-                required: true,
-                maxlength: 200,
-            },
-            contato: {
-                required: true,
-                maxlength: 50,
-            },
-            telefone: {
-                required: true,
-                maxlength: 15,
-                minlength: 14,
-            },
-            email: {
-                required: true,
-                maxlength: 100,
-                email: true
-            },
+    $(".cadastrar-produto-form").validate();
 
-        },
-        messages: {
-            fornecedor: {
-                required: 'Preencha esse campo.',
-                maxlength: 'Esse campo aceita no máximo 50 caractéres'
-            },
-            fornecido: {
-                required: 'Preencha esse campo.',
-                maxlength: 'Esse campo aceita no máximo 50 caractéres'
-            },
-            descricao: {
-                required: 'Preencha esse campo.',
-                maxlength: 'Esse campo aceita no máximo 200 caractéres'
-            },
-            contato: {
-                required: 'Preencha esse campo.',
-                maxlength: 'Esse campo aceita no máximo 50 caractéres'
-            },
-            telefone: {
-                required: 'Preencha esse campo.',
-                maxlength: 'Insira um telefone válido.',
-                minlength: 'Insira um telefone válido.',
-            },
-            email: {
-                required: 'Preencha esse campo.',
-                maxlength: 'Esse campo aceita no máximo 100 caractéres',
-                email: 'Digite um email válido'
-            },
-        }
-    })
 
     //telefone
     var SPMaskBehavior = function (val) {

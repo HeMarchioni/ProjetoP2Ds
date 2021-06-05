@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" th:href="@{../css/styles.css}">
 </head>
-<body>
+<body onload="cadastroFornecedor()">
 	<header class="home-header-container">
         <div class="home-header-cadastro">
             <ul>
@@ -40,24 +40,45 @@
     </div>
 
 
-    <form class="cadastrar-produto-form" action="#" th:action="@{/cadastroFornecedor}" th:object="${fornecedor}" method=post>
+    <form class="cadastrar-produto-form teste-form" action="#" th:action="@{/cadastroFornecedor}" th:object="${fornecedor}" method=post>
     	<label for="fornecedor">Nome do fornecedor:</label> 
-        <input id="fornecedor" name="fornecedor" type="text" th:field="*{nm_Fornecedor}" placeholder="Lojas Renner">
+        <input 
+            required data-msg="Preencha este campo."
+            data-rule-maxlength=50 data-msg-maxlength="Máximo de 50 caractéres"   
+            id="fornecedor" name="fornecedor" type="text" th:field="*{nm_Fornecedor}" placeholder="Lojas Renner"
+        >
 
         <label for="fornecido">Produto fornecido:</label> 
-    	<input id="fornecido" name="fornecido" type="text" th:field="*{nm_Produto}" placeholder="Tênis Air Max">
+    	<input 
+        required data-msg="Preencha este campo."
+        data-rule-maxlength=50 data-msg-maxlength="Máximo de 50 caractéres"
+        id="fornecido" name="fornecido" type="text" th:field="*{nm_Produto}" placeholder="Tênis Air Max">
 
         <label for="descricao">Descrição:</label> 
-        <textarea id="descricao" name="descricao" type="text" th:field="*{ds_Fornecedor}" placeholder="Descrição do fornecedor" rows="5"></textarea>
+        <textarea 
+        required data-msg="Preencha este campo."
+        data-rule-maxlength=200 data-msg-maxlength="Máximo de 200 caractéres"
+        id="descricao" name="descricao" type="text" th:field="*{ds_Fornecedor}" placeholder="Descrição do fornecedor" rows="5"></textarea>
 
         <label for="contato">Contato:</label> 
-        <input id="contato" name="contato" type="text" th:field="*{nm_Contato}" placeholder="Nome do representante comercial">
+        <input 
+        required data-msg="Preencha este campo."
+        data-rule-maxlength=30 data-msg-maxlength="Máximo de 30 caractéres"
+        id="contato" name="contato" type="text" th:field="*{nm_Contato}" placeholder="Nome do representante comercial">
 
         <label for="telefone">Telefone:</label> 
-        <input id="telefone" name="telefone" type="tel" th:field="*{cd_Telefone}" placeholder="13 99999-9999">
+        <input 
+        required data-msg="Preencha este campo."
+        data-rule-minlength=14 data-msg-minlength="Insira um telefone ou celular válido"
+        data-rule-maxlength=15 data-msg-maxlength="Insira um telefone ou celular válido"
+        id="telefone" name="telefone" type="tel" th:field="*{cd_Telefone}" placeholder="13 99999-9999">
 
         <label for="email">Email:</label> 
-        <input id="email" name="email" type="email" th:field="*{ds_Email}" placeholder="mail@teste.com">
+        <input 
+        required data-msg="Preencha este campo."
+        data-rule-maxlength=50 data-msg-maxlength="Máximo de 50 caractéres"
+        data-rule-email="true" data-msg-email="Insira um email válido."
+        id="email" name="email" type="email" th:field="*{ds_Email}" placeholder="mail@teste.com">
 
     	<button type="submit" class="link-padrao">Cadastrar fornecedor</button>
     </form>

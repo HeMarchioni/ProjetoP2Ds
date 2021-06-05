@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" th:href="@{../css/styles.css}">
 </head>
-<body>
+<body onload="cadastroProduto()">
     <header class="home-header-container">
         <div class="home-header-cadastro">
             <ul>
@@ -51,24 +51,40 @@
             id="productName" name="productName"
             type="text" th:field="*{nm_Produto}" 
             placeholder="Tênis Air Max"
+            required data-msg="Preencha este campo."
+            data-rule-maxlength=50 data-msg-maxlength="Máximo de 50 caractéres."
+            
         >
 
         <label for="productGenero">Genero:</label>
-        <input
-                id="productGenero" name="productGenero"
-                type="text"
-                th:field="*{nm_Genero}"
-                placeholder="Maculino"
+        <select
+            id="productGenero" name="productGenero"
+            type="text"
+            th:field="*{nm_Genero}"
+            placeholder="Maculino"
+            required data-msg="Preencha este campo."
         >
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Infantil">Infantil</option>
+        </select>
 
 
         <label for="productCategory">Categoria:</label> 
-    	<input 
+    	<select 
             id="productCategory" name="productCategory"
             type="text" 
             th:field="*{nm_Categoria}" 
             placeholder="Esportes"
+            required data-msg="Preencha este campo."
         >
+            <option value="Botas">Botas</option>
+            <option value="Chinelos e Sandalias">Chinelos e Sandálias</option>
+            <option value="Chuteiras">Chuteiras</option>
+            <option value="Sapatilhas">Sapatilhas</option>
+            <option value="Tenis">Tênis</option>
+            <option value="Tenis Performance">Tênis Performance</option>
+        </select>
 
         <label for="productDescription">Descrição:</label> 
         <textarea 
@@ -77,6 +93,8 @@
             th:field="*{ds_Produto}" 
             placeholder="O Tênis Air Max é muito confortável por conta das suas molas internas..." 
             rows="5"
+            required data-msg="Preencha este campo."
+            data-rule-maxlength=200 data-msg-maxlength="Máximo de 200 caractéres."
         ></textarea>
 
         <label for="productMarca">Marca:</label>
@@ -85,6 +103,8 @@
                 type="text"
                 th:field="*{nm_Marca}"
                 placeholder="Adidas / Nike"
+                required data-msg="Preencha este campo."
+                data-rule-maxlength=50 data-msg-maxlength="Máximo de 50 caractéres."
         >
         <label for="productCor">Cor:</label>
         <input
@@ -92,6 +112,8 @@
                 type="text"
                 th:field="*{nm_Cor}"
                 placeholder="Vermelho"
+                required data-msg="Preencha este campo."
+                data-rule-maxlength=20 data-msg-maxlength="Máximo de 20 caractéres."
         >
 
         <label for="productTamanho">Tamanho:</label>
@@ -100,6 +122,9 @@
                 type="text"
                 th:field="*{ds_Tamanho}"
                 placeholder="41"
+                required data-msg="Preencha este campo."
+                data-rule-minlength=2 data-msg-minlength="Preencha com um tamanho válido."
+                data-rule-maxlength=2 data-msg-maxlength="Preencha com um tamanho válido."
         >
 
 
@@ -110,6 +135,8 @@
             type="text" 
             th:field="*{vl_Produto}" 
             placeholder="R$ 420.00"
+            required data-msg="Preencha este campo."
+            data-rule-maxlength=20 data-msg-maxlength="Verifique se o valor do produto está correto."
         >
 
     	<button type="submit" class="link-padrao">Cadastrar produto</button>
