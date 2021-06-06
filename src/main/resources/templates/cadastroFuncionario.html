@@ -39,6 +39,7 @@
         <h1>Cadastrar Funcionário</h1>
     </div>
             <form 
+                class="cadastrar-produto-form"
                 id="form-cadastro"
                 action="#" 
                 th:action="@{/cadastroFuncionario}"
@@ -63,30 +64,24 @@
                     data-rule-minlength="14" data-rule-maxlength="14"
                 >
 
-                <div class="cadastro-email-telefone">
-                    <div class="bloco-email">
-                        <label for="email">E-mail: </label>
-                        <input 
-                            id="email" name="email" type="email" placeholder="Ex: mail@exemplo.com"
-                            th:field="*{ds_Email}" 
-                            required 
-                            data-msg="Por favor, insira um e-mail válido."
-                            data-rule-maxlength="150"
-                            
-                        >
-                    </div>
-
-                    <div class="bloco-telefone">
-                        <label for="tel">Telefone: </label>
-                        <input 
-                            id="tel" name="tel" type="tel" placeholder="99 9 9999-9999"
-                            th:field="*{cd_Telefone}" 
-                            required 
-                            data-msg="Por favor, insira um telefone ou celular."
-                            data-rule-minlength="14" data-rule-maxlength="16"
-                        >
-                    </div>
-                </div>
+                <label for="email">E-mail: </label>
+                <input 
+                    id="email" name="email" type="email" placeholder="Ex: mail@exemplo.com"
+                    th:field="*{ds_Email}" 
+                    required 
+                    data-msg="Por favor, insira um e-mail válido."
+                    data-rule-maxlength="150"
+                    
+                >
+                
+                <label for="tel">Telefone: </label>
+                <input 
+                    id="tel" name="tel" type="tel" placeholder="99 9 9999-9999"
+                    th:field="*{cd_Telefone}" 
+                    required 
+                    data-msg="Por favor, insira um telefone ou celular."
+                    data-rule-minlength="14" data-rule-maxlength="16"
+                >
 
                 <label for="cep">CEP: </label>
                 <input 
@@ -106,31 +101,25 @@
                     data-rule-maxlength="200"
                 >
 
-                <div class="cadastro-cidade-estado">
-                    <div class="bloco-cidade">
-                        <label for="cidade">Cidade: </label>
-                        <input 
-                            id="cidade" name="cidade" type="text" placeholder="Ex: Santos"
-                            th:field="*{ds_Cidade}" 
-                            required 
-                            data-msg="Por favor, insira a cidade."
-                            data-rule-maxlength="50"
-                        >
-                    </div>
+                <label for="cidade">Cidade: </label>
+                <input 
+                    id="cidade" name="cidade" type="text" placeholder="Ex: Santos"
+                    th:field="*{ds_Cidade}" 
+                    required 
+                    data-msg="Por favor, insira a cidade."
+                    data-rule-maxlength="50"
+                >
 
-                    <div class="bloco-estado">
-                        <label for="uf">UF: </label>
-                        <input 
-                            id="uf" name="uf" type="text" placeholder="Ex: SP"
-                            th:field="*{sg_Uf}" 
-                            required 
-                            data-msg="Por favor, insira o UF do estado."
-                            data-rule-minlength="2" data-rule-maxlength="2" data-msg-maxlength="Insira um UF de 2 caractéres."
-                            maxlength="2"
-                        >
-                    </div>
-                </div>
-
+                <label for="uf">UF: </label>
+                <input 
+                    id="uf" name="uf" type="text" placeholder="Ex: SP"
+                    th:field="*{sg_Uf}" 
+                    required 
+                    data-msg="Por favor, insira o UF do estado."
+                    data-rule-minlength="2" data-rule-maxlength="2" data-msg-maxlength="Insira um UF de 2 caractéres."
+                    maxlength="2"
+                >
+                 
                 <label for="cargo">Cargo: </label>
                 <input
                         id="cargo" name="cargo" type="text" placeholder="Assistente Administrativo"
