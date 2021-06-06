@@ -2,6 +2,7 @@ package com.P2Ds.ProjetoP2Ds.Controllers;
 
 
 
+import com.P2Ds.model.Fornecedor.FornecedorService;
 import com.P2Ds.model.Funcionario.Funcionario;
 import com.P2Ds.model.Funcionario.FuncionarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
+import java.util.Map;
 
 
 @Controller
@@ -38,6 +42,25 @@ public class FuncionarioController {
         funcionarioService.inserirFuncionario(funcionario);
         return "sucesso";
     }
+
+
+    // ===========================================================================================================
+
+
+    @GetMapping("/listarFuncionario")     // -> pega a lista de todos os Funcionarios cadastrados
+    public String listarFuncionarios(Model model) {
+        FuncionarioService funcionarioService = context.getBean(FuncionarioService.class);
+        List<Map<String,Object>> funcionarios = funcionarioService.getListaFuncionarios();
+        model.addAttribute("funcionarios", funcionarios);
+        return "funcionariosLista";
+    }
+
+
+
+
+
+
+
 
 
 

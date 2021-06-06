@@ -62,15 +62,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication()
-                    .dataSource(dataSource)
+                // ==================================================================================================== -> Autenticação Cliente
+                .dataSource(dataSource)
                     .passwordEncoder(passwordEncoder())
                     .usersByUsernameQuery("select ds_Email,cd_Senha, enabled from cliente where ds_Email=?")
                     .authoritiesByUsernameQuery("select ds_Email, authority from cliente where ds_Email=?")
                 .and()
+                //===================================================================================================== -> Autenticação Funcionário
+                    .jdbcAuthentication()
+                    .dataSource(dataSource)
+                    .passwordEncoder(passwordEncoder())
+                    .usersByUsernameQuery("select ds_Email,cd_Senha, enabled from funcionario where ds_Email=?")
+                    .authoritiesByUsernameQuery("select ds_Email, authority from funcionario where ds_Email=?")
+                .and()
+                //====================================================================================================== -> Autenticação Usuário Master
                     .inMemoryAuthentication()
                     .passwordEncoder(passwordEncoder())
                     .withUser("master@acme")     // -> Usuario Master
-                    .password("$2a$10$1sbpaSZCSTrLjvKL91GlBuP/ytKu5ult5PwPpO8ye02nEZF4pBJt2")  // -> senha master de acesso
+                    .password("$2a$10$1sbpaSZCSTrLjvKL91GlBuP/ytKu5ult5PwPpO8ye02nEZF4pBJt2")  // -> senha master de acesso criptografada
                     .authorities("USER");
     }
 

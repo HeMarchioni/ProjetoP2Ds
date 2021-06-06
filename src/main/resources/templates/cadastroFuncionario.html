@@ -154,22 +154,7 @@
                 </select>
 
 
-                <label for="senha">Senha: </label>
-                <input 
-                    id="senha" name="senha" type="password" placeholder="Digite sua senha"
-                    th:field="*{cd_Senha}" 
-                    required 
-                    data-msg="Por favor, crie uma senha."
-                    data-rule-minlength="8" data-msg-minlength="A senha deve ter no mínimo 8 caractéres."
-                    data-rule-maxlength="50" data-msg-maxlength="A senha deve ter no máximo 50 caractéres."
-                >
 
-                <label for="senha2">Confirmar senha: </label>
-                <input 
-                    id="senha2" name="senha2" type="password" placeholder="Confirme sua senha"
-                    required 
-                    data-msg="As senhas devem ser idênticas."
-                >
               
                 <button class="link-padrao" type="submit">Cadastrar</button>
               </form>

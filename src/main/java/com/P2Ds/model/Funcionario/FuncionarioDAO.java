@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
+import java.util.List;
+import java.util.Map;
 
 @Repository
 public class FuncionarioDAO {
@@ -43,10 +45,18 @@ public class FuncionarioDAO {
         obj[6] = funcionario.getSg_Uf();
         obj[7] = funcionario.getCd_Cep();
         obj[8] = funcionario.getCd_Telefone();
-        obj[9] = passwordEncoder.encode(funcionario.getCd_Senha());
+        obj[9] = passwordEncoder.encode(funcionario.getDs_Email());
         obj[10] = funcionario.getAuthority();
         jdbc.update(sql, obj);
     }
+
+
+    public List<Map<String, Object>> getListaFuncionarios() {          // -> pega a lista de todos os Fornecedores cadastrados
+        String sql = "SELECT * FROM funcionario";
+        List<Map<String, Object>> Funcionarios = (List<Map<String, Object>>) jdbc.queryForList(sql);
+        return Funcionarios;
+    }
+
 
 
 

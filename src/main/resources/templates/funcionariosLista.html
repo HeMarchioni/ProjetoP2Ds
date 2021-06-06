@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de funcionarios | ACME</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" th:href="@{../img/favicon/favicon.ico}"/>
+
+    <link rel="stylesheet" th:href="@{../css/styles.css}">
+</head>
+<body>
+	<header class="home-header-container">
+        <div class="home-header-cadastro">
+            <ul>
+                <li> <a th:href="@{/cadastro}"> Cadastrar <i class="fas fa-user-plus"></i> </a></li>
+                <li> <a th:href="@{/logado}"> Login <i class="fas fa-sign-in-alt"></i> </a></li>
+                <li> <a href="#"> Carrinho <i class="fas fa-shopping-cart"></i> </a></li>
+            </ul>
+        </div>
+        <nav class="navbar">
+            <a id="nav-logo" th:href="@{/}">REDE <span>ACME</span></a>
+            <ul>
+                <li> <a th:href="@{/sobre}"> Sobre </a></li>
+                <li> <a href="#"> Produtos </a></li>
+                <li> <a th:href="@{/contato}"> Contato </a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="cadastro-header">
+        <a th:href="@{/logado}"> < Voltar ao Menu </a>
+    </div>
+    
+	<section class="listagem">
+        <div class="listagem-container">
+            <h1>Listagem de Funcionarios</h1>
+
+
+            <table class="table table-striped table-primary">
+                <thead class="ttop">
+                    <tr class="table-info">
+                        <td><b> Codigo do Funcionario</b></td>
+						<td><b>CPF</b> </td>
+						<td> Nome</td>
+						<td> Cargo </td>
+						<td> Email</td>
+						<td> Endereço</td>
+                        <td> Cidade</td>
+                        <td> UF </td>
+                        <td> CEP</td>
+                        <td> Telefone</td>
+                        <td> Habilitado</td>
+                        <td> Autoridade</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="funci : ${funcionarios}">
+                        <td th:text="${funci.cd_Funcionario}"></td>
+						<td th:text="${funci.cd_Cpf}"></td>
+						<td th:text="${funci.nm_Funcionario}"></td>
+						<td th:text="${funci.ds_cargo}"></td>
+						<td th:text="${funci.ds_Email}"></td>
+						<td th:text="${funci.ds_Endereco}"></td>
+                        <td th:text="${funci.ds_Cidade}"></td>
+                        <td th:text="${funci.sg_Uf}"></td>
+                        <td th:text="${funci.cd_Cep}"></td>
+                        <td th:text="${funci.cd_Telefone}"></td>
+                        <td th:text="${funci.enabled}"></td>
+                        <td th:text="${funci.authority}"></td>
+
+                        <td>
+                            <a class="link-padrao" th:href="@{'updForn/' + ${funci.cd_Funcionario}}">
+                                Editar
+                            </a>
+                        </td>
+                        <td> 
+                            <form th:action="@{'apagarForn/' + ${funci.cd_Funcionario}}" method=post>
+                                <button class="delete-button" type="submit"><i class="fas fa-times"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                 </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <span>Desenvolvido por Tech Monkeys ©</span>
+        </div>
+    </footer>
+
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
+    <script src="https://kit.fontawesome.com/5ced3d7c26.js" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+</html>
