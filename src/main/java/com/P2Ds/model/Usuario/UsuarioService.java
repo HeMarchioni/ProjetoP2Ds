@@ -47,5 +47,10 @@ public class UsuarioService {
     }    // -> Alterar Senha no banco de dados
 
 
+    public void atualizarCadastro(Usuario usuario) {
+        UserDao.atualizarCadastro(usuario);
+    }
+
+
 
 }

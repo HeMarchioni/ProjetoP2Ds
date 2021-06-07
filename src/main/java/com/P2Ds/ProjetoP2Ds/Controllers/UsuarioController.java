@@ -1,6 +1,10 @@
 package com.P2Ds.ProjetoP2Ds.Controllers;
 
 
+import com.P2Ds.model.Fornecedor.Fornecedor;
+import com.P2Ds.model.Fornecedor.FornecedorService;
+import com.P2Ds.model.Funcionario.Funcionario;
+import com.P2Ds.model.Funcionario.FuncionarioService;
 import com.P2Ds.model.Usuario.Usuario;
 import com.P2Ds.model.Usuario.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.Map;
@@ -95,6 +100,27 @@ public class UsuarioController {
         usuarioService.alterarSenha(usuario);
         return "Sucesso";
     }
+
+
+
+    @GetMapping("/updUsuario")                                               // -> atualizar dados do usuario
+    public String updateUsuario( Model model){
+        model.addAttribute("antigo", user);
+        model.addAttribute("usuario",new Usuario());
+        return "atualizacaoUsuario";
+    }
+
+    @PostMapping("/updUsuario")
+    public String updateUsuarioPost(@ModelAttribute Usuario usuario, Model model) {
+        UsuarioService usuarioService = context.getBean(UsuarioService.class);
+        usuario.setAuthority(user.getAuthority());
+        usuario.setCd_Usuario(user.getCd_Usuario());
+        usuarioService.atualizarCadastro(usuario);
+        return "Sucesso";
+    }
+
+
+
 
 
 

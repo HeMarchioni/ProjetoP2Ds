@@ -57,6 +57,36 @@ public class UsuarioDAO {
         }
     }
 
+    public void atualizarCadastro(Usuario usuario) {     // -> alterar cadastro no banco de dados
+        if (usuario.getAuthority().contentEquals("USER")) {     // -> se for cliente
+            String sql = "UPDATE cliente SET ds_Email = ?,cd_Telefone = ?,cd_Cep = ?,ds_Endereco = ?,ds_Cidade = ?,sg_Uf = ? WHERE cd_Cliente = ?";
+            jdbc.update(sql, new Object[]{
+                    usuario.getDs_Email(),
+                    usuario.getCd_Telefone(),
+                    usuario.getCd_Cep(),
+                    usuario.getDs_Endereco(),
+                    usuario.getDs_Cidade(),
+                    usuario.getSg_Uf(),
+                    usuario.getCd_Usuario()
+            });
+        } else {                                 // -> se for Funcionario
+            String sql = "UPDATE funcionario SET ds_Email = ?,cd_Telefone = ?,cd_Cep = ?,ds_Endereco = ?,ds_Cidade = ?,sg_Uf = ? WHERE cd_Funcionario = ?";
+            jdbc.update(sql, new Object[]{
+                    usuario.getDs_Email(),
+                    usuario.getCd_Telefone(),
+                    usuario.getCd_Cep(),
+                    usuario.getDs_Endereco(),
+                    usuario.getDs_Cidade(),
+                    usuario.getSg_Uf(),
+                    usuario.getCd_Usuario()
+            });
+        }
+    }
+
+
+
+
+
 
 }
 
