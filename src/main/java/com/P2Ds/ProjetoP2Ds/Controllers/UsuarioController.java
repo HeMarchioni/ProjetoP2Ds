@@ -9,6 +9,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.Map;
 
@@ -20,8 +22,8 @@ public class UsuarioController {
 
     @Autowired
     private ApplicationContext context;
-    private String user;
-
+    private String userEmail;
+    private Usuario user;
 
 
 
@@ -29,39 +31,69 @@ public class UsuarioController {
     @GetMapping("/logado")
     public String logado(Model model) {
         UsuarioService usuarioService = context.getBean(UsuarioService.class);
-        user = usuarioService.getUserEmail();
+        userEmail = usuarioService.getUserEmail();
 
 
         try {
 
 
-            Map<String,Object> usuarioMap = usuarioService.getUsuarioFuncionario(user);                  // -> Se for Funcionario
+            Map<String,Object> usuarioMap = usuarioService.getUsuarioFuncionario(userEmail);                  // -> Se for Funcionario
             Usuario usuario = new Usuario((int)usuarioMap.get("cd_Funcionario"),(String)usuarioMap.get("cd_Cpf"),
                     (String)usuarioMap.get("nm_Funcionario"),(String) usuarioMap.get("ds_Cargo"),(String) usuarioMap.get("ds_Email"),
                     (String) usuarioMap.get("ds_Endereco"),(String) usuarioMap.get("ds_Cidade"),(String) usuarioMap.get("sg_Uf"),
-                    (String) usuarioMap.get("cd_Cep"),(String) usuarioMap.get("cd_Telefone"));
+                    (String) usuarioMap.get("cd_Cep"),(String) usuarioMap.get("cd_Telefone"),(String) usuarioMap.get("authority"));
 
+            user = usuario;
             model.addAttribute("usuario", usuario);
 
 
         } catch (Exception e) {
             try {
-                Map<String, Object> usuarioMap = usuarioService.getUsuarioCliente(user);                  // -> Se for Cliente
+                Map<String, Object> usuarioMap = usuarioService.getUsuarioCliente(userEmail);                  // -> Se for Cliente
                 Usuario usuario = new Usuario((int) usuarioMap.get("cd_Cliente"), (String) usuarioMap.get("cd_Cpf"),
                         (String) usuarioMap.get("nm_Cliente"), (String) usuarioMap.get("ds_Email"),
                         (String) usuarioMap.get("ds_Endereco"), (String) usuarioMap.get("ds_Cidade"), (String) usuarioMap.get("sg_Uf"),
-                        (String) usuarioMap.get("cd_Cep"), (String) usuarioMap.get("cd_Telefone"));
+                        (String) usuarioMap.get("cd_Cep"), (String) usuarioMap.get("cd_Telefone"),(String) usuarioMap.get("authority"));
 
+                user = usuario;
                 model.addAttribute("usuario", usuario);
             } catch (Exception e2) {                                                 // -> Se for Usuario Master
                 Usuario usuario = new Usuario();
                 usuario.setNm_Usuario("Master");
+                user = usuario;
                 model.addAttribute("usuario",usuario);
 
             }
         }
 
         return "logado.html";
+    }
+
+    // ==================== Pagina de Perfil do usuario =====================================
+
+    @GetMapping("/perfil")
+    public String perfil(Model model) {
+        model.addAttribute("usuario",user);
+        return "Perfil.html";
+    }
+
+
+    //================ Alterar Senha do Usuario =========================================
+
+    @GetMapping("/alterarSenha")
+    public String alterarSenha(Model model) {
+        model.addAttribute("usuario",user);
+        return "alterarSenha.html";
+    }
+
+
+    @PostMapping("/alterarSenha")           // -> alterar Senha do Usuario
+    public String alterarSenhaPost(@ModelAttribute Usuario usuario) {
+        UsuarioService usuarioService = context.getBean(UsuarioService.class);
+        usuario.setAuthority(user.getAuthority());
+        usuario.setCd_Usuario(user.getCd_Usuario());
+        usuarioService.alterarSenha(usuario);
+        return "Sucesso";
     }
 
 

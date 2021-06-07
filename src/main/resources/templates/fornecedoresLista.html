@@ -80,7 +80,7 @@
                                 <a class="delete-button" href="#ex1" rel="modal:open"><i class="fas fa-times"></i></a>
                                 <form id="ex1" class="modal" th:action="@{'apagarForn/' + ${forn.cd_Fornecedor}}" method=post>
 								  <strong>Você deseja seguir com a exclusão desse item?</strong>
-								  <span class="excluir-nome">Nome: </span> <span class="excluir-item-nome" th:text="${prod.nm_Fornecedor}"></span>
+								  <span class="excluir-nome">Nome: </span> <span class="excluir-item-nome" th:text="${forn.nm_Fornecedor}"></span>
 								  <div>
                                     <button class="delete-button" type="submit">EXCLUIR</button>
                                     <a href="#" rel="modal:close">VOLTAR</a>

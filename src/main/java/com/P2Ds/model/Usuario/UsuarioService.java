@@ -2,6 +2,7 @@ package com.P2Ds.model.Usuario;
 
 
 
+import com.P2Ds.model.Fornecedor.Fornecedor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -39,5 +40,12 @@ public class UsuarioService {
             return  currentUserName;
         } else return null;
     }
+
+
+    public void alterarSenha(Usuario usuario) {
+        UserDao.alterarSenha(usuario);
+    }    // -> Alterar Senha no banco de dados
+
+
 
 }
