@@ -10,6 +10,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 
     <link rel="shortcut icon" th:href="@{../img/favicon/favicon.ico}"/>
 
@@ -21,6 +23,12 @@
             <ul>
                 <li> <a th:href="@{/perfil}"> Perfil <i class="fas fa-user-circle"></i> </a></li>
                 <li> <a th:href="@{/logado}"> Administração <i class="fas fa-tools"></i> </a></li>
+                <li style="display: flex; align-items: center;">
+	                <form th:action="@{/logout}" method="post">
+	                    <button type="submit" style="border: none; background: transparent; color: #444; font-size:12.8px;">Sair <i class="fas fa-sign-out-alt"></i></button>
+	                    <input type="hidden" th:name="${_csrf.parameterName}"  th:value="${_csrf.token}" />
+	                </form>
+                </li>
             </ul>
         </div>
         <nav class="navbar">
@@ -74,15 +82,27 @@
                             </a>
                         </td>
                         <td> 
-                            <form th:action="@{'apagar/' + ${prod.cd_Produto}}" method=post>
-                                <button class="delete-button" type="submit"><i class="fas fa-times"></i></button>
-                            </form>
+                            <div class="excluir-item">
+                                <a class="delete-button" href="#ex1" rel="modal:open"><i class="fas fa-times"></i></a>
+                                <form id="ex1" class="modal" th:action="@{'apagar/' + ${prod.cd_Produto}}" method=post>
+								  <strong>Você deseja seguir com a exclusão desse item?</strong>
+								  <span class="excluir-nome">Nome: </span> <span class="excluir-item-nome" th:text="${prod.nm_Produto}"></span>
+								  <div>
+                                    <button class="delete-button" type="submit">EXCLUIR</button>
+                                    <a href="#" rel="modal:close">VOLTAR</a>
+                                  </div>
+								</form>
+                            </div>
                         </td>
                     </tr>
                  </tbody>
             </table>
         </div>
     </section>
+    
+    
+    
+    
     
     <footer>
         <div class="footer-content">
@@ -96,7 +116,8 @@
         crossorigin="anonymous">
     </script>
     <script src="https://kit.fontawesome.com/5ced3d7c26.js" crossorigin="anonymous"></script>
-    <script src="dist/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <script src="/js/main.js"></script>
     
 </body>
 </html>
