@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erro! | ACME</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" th:href="@{../img/favicon/favicon.ico}"/>
+
+    <link rel="stylesheet" th:href="@{../css/styles.css}">
+</head>
+<body>
+    <header class="home-header-container">
+        <div class="home-header-cadastro">
+            <ul>
+
+                <li style="display: flex; align-items: center;">
+	                <form th:action="@{/logout}" method="post">
+	                    <button type="submit" style="border: none; background: transparent; color: #444; font-size:12.8px;">Sair <i class="fas fa-sign-out-alt"></i></button>
+	                    <input type="hidden" th:name="${_csrf.parameterName}"  th:value="${_csrf.token}" />
+	                </form>
+                </li>
+            </ul>
+        </div>
+        <nav class="navbar">
+            <a id="nav-logo" th:href="@{/}">REDE <span>ACME</span></a>
+            <ul>
+                <li> <a th:href="@{/sobre}"> Sobre </a></li>
+                <li> <a href="#"> Produtos </a></li>
+                <li> <a th:href="@{/contato}"> Contato </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="cadastrado-sucesso">
+        <h1 id="produto-cadastrado">FUNCIONARIO NÃO PODE SER CADASTRADO (E-mail ja Cadastrado)</h1>
+
+        <a th:href="@{/cadastroFuncionario}" class="link-padrao">VOLTAR</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <span>Desenvolvido por Tech Monkeys ©</span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -90,5 +90,15 @@ public class FuncionarioDAO {
 
 
 
+    public Map<String, Object> verificaEmailFunci(String ds_Email) {
+        String sql = "SELECT ds_Email FROM cliente WHERE ds_Email = ?";
+        return jdbc.queryForMap(sql,new Object[] {ds_Email});
+    }
+
+    public Map<String, Object> verificaEmailFunci2(String ds_Email) {
+        String sql = "SELECT ds_Email FROM funcionario WHERE ds_Email = ?";
+        return jdbc.queryForMap(sql,new Object[] {ds_Email});
+    }
+
 
 }

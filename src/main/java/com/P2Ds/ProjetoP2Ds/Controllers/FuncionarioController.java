@@ -40,8 +40,12 @@ public class FuncionarioController {
     public String postFuncionario(@ModelAttribute Funcionario funcionario,
                               Model model) {
         FuncionarioService funcionarioService = context.getBean(FuncionarioService.class);
-        funcionarioService.inserirFuncionario(funcionario);
-        return "sucesso";
+        if (funcionarioService.verificaEmailFunci(funcionario.getDs_Email()) || funcionarioService.verificaEmailFunci2(funcionario.getDs_Email())) {
+            return "CadastroInvalidoFuncionario";
+        } else {
+            funcionarioService.inserirFuncionario(funcionario);
+            return "sucesso";
+        }
     }
 
 

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
+import java.util.Map;
 
 
 @Repository
@@ -50,6 +51,15 @@ public class ClienteDAO {
     }
 
 
+    public Map<String, Object> verificaEmail(String ds_Email) {
+        String sql = "SELECT ds_Email FROM cliente WHERE ds_Email = ?";
+        return jdbc.queryForMap(sql,new Object[] {ds_Email});
+    }
+
+    public Map<String, Object> verificaEmail2(String ds_Email) {
+        String sql = "SELECT ds_Email FROM funcionario WHERE ds_Email = ?";
+        return jdbc.queryForMap(sql,new Object[] {ds_Email});
+    }
 
 
 }

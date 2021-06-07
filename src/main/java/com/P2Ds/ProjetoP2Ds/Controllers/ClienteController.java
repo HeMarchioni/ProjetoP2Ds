@@ -33,8 +33,13 @@ public class ClienteController {
     public String postCliente(@ModelAttribute Cliente cli,
                               Model model) {
         ClienteService cs = context.getBean(ClienteService.class);
-        cs.inserirCliente(cli);
-        return "sucesso";
+        if (cs.verificaEmail(cli.getDs_Email()) || cs.verificaEmail2(cli.getDs_Email())) {
+            return "CadastroInvalido";
+        } else {
+            cs.inserirCliente(cli);
+            return "sucesso";
+        }
+
     }
 
 

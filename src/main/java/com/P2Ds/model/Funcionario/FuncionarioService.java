@@ -36,10 +36,30 @@ public class FuncionarioService {
     }  // -> busca somente pelo codigo
 
 
+
     public void updateFuncionario(int cd_Funcionario, Funcionario funcionario) {
         funciDao.updateFuncionario(cd_Funcionario, funcionario);
     } // -> atualizar dados do fornecedor no banco
 
+
+
+    public boolean verificaEmailFunci(String ds_Email){
+        try {
+            funciDao.verificaEmailFunci(ds_Email).get("ds_Email");
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public boolean verificaEmailFunci2(String ds_Email) {
+        try {
+            funciDao.verificaEmailFunci2(ds_Email).get("ds_Email");
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 
 
 
