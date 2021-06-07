@@ -1,7 +1,5 @@
 package com.P2Ds.ProjetoP2Ds.Controllers;
 
-
-
 import com.P2Ds.model.Contato.Contato;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -9,8 +7,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+
+
+
 
 @Controller
 @ComponentScan("com.P2Ds.model")      //--> VAI PROCURAR NA PASTA ANTES COM.MODEL
@@ -21,6 +20,7 @@ public class ControllerPrincipal {
     private ApplicationContext context;
 
 
+    // =========== Pagina Principal =============================================================
     @GetMapping("/")
     public String index() {
         return "index.html";
@@ -31,29 +31,18 @@ public class ControllerPrincipal {
         return "produto.html";
     }
 
-
-
     // ============ Sobre ====================================================================
 
-    @GetMapping("/sobre")                    // -> Caminho para a pagina Sobre
+    @GetMapping("/sobre")
     public String sobreAcme() {
         return "sobre.html";
     }
-
-
-
-
 
     // - Parte login -==================================================
 
     @GetMapping("/login")
     public String login() {
         return "login.html";
-    }
-
-    @GetMapping("/logado")
-    public String logado() {
-        return "logado.html";
     }
 
 

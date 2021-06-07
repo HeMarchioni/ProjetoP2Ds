@@ -78,10 +78,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 //====================================================================================================== -> Autenticação Usuário Master
                     .inMemoryAuthentication()
                     .passwordEncoder(passwordEncoder())
-                    .withUser("master@acme")     // -> Usuario Master
+                    .withUser("master@acme")     // -> Usuário Master
                     .password("$2a$10$1sbpaSZCSTrLjvKL91GlBuP/ytKu5ult5PwPpO8ye02nEZF4pBJt2")  // -> senha master de acesso criptografada
                     .authorities("USER");
     }
+
 
 
 

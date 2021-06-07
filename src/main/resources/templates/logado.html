@@ -34,8 +34,7 @@
     </header>
         <section class="menu-usuario">
             <div class="menu-usuario-content">
-                <h1 id="gay" th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-
+                <h1 id="gay" >Bem Vindo,  <span th:text="${usuario.nm_Usuario}"></span></h1>
                 <div class="menu-usuario-wrapper">
                     <ul>
                         <li>
