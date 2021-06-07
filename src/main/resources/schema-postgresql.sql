@@ -55,25 +55,3 @@ CREATE TABLE IF NOT EXISTS funcionario (
 
 
 
-CREATE TABLE IF NOT EXISTS vendas (
-    cd_Venda serial primary key,
-    cd_Cpf varchar(14) references cliente (cd_Cpf),
-    vl_Total real not null
-);
-
-
-
-CREATE TABLE IF NOT EXISTS vendasProduto (
-    cd_Venda int references vendas (cd_Venda),
-    cd_Produto int references produto (cd_Produto),
-    qt_Produto int check (qt_Produto > 0),
-    vl_Unidade real not null,
-    primary key (cd_Venda, cd_Produto)
-);
-
-CREATE TABLE IF NOT EXISTS estoque(
-    cd_Produto int references produto (cd_Produto),
-    cd_Fornecedor int references fornecedor (cd_Fornecedor),
-    qt_Estoque int not null,
-    primary key (cd_Produto, cd_Fornecedor)
-);
