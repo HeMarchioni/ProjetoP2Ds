@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
     <link rel="shortcut icon" th:href="@{../img/favicon/favicon.ico}"/>
 
     <link rel="stylesheet" th:href="@{../css/styles.css}">
@@ -81,17 +83,25 @@
                         <td th:text="${funci.authority}"></td>
 
                         <td>
-                            <a class="link-padrao" th:href="@{'updForn/' + ${funci.cd_Funcionario}}">
+                            <a class="link-padrao" th:href="@{'updFunci/' + ${funci.cd_Funcionario}}">
                                 Editar
                             </a>
                         </td>
-                        <td> 
-                            <form th:action="@{'apagarForn/' + ${funci.cd_Funcionario}}" method=post>
-                                <button class="delete-button" type="submit"><i class="fas fa-times"></i></button>
-                            </form>
+                        <td>
+                            <div class="excluir-item">
+                                <a class="delete-button" href="#ex1" rel="modal:open"><i class="fas fa-times"></i></a>
+                                <form id="ex1" class="modal" th:action="@{'apagarFunci/' + ${funci.cd_Funcionario}}" method=post>
+                                    <strong>Você deseja seguir com a exclusão desse item?</strong>
+                                    <span class="excluir-nome">Nome: </span> <span class="excluir-item-nome" th:text="${funci.nm_Funcionario}"></span>
+                                    <div>
+                                        <button class="delete-button" type="submit">EXCLUIR</button>
+                                        <a href="#" rel="modal:close">VOLTAR</a>
+                                    </div>
+                                </form>
+                            </div>
                         </td>
                     </tr>
-                 </tbody>
+                </tbody>
             </table>
         </div>
     </section>
@@ -103,12 +113,13 @@
     </footer>
 
     <script
-        src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-        crossorigin="anonymous">
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous">
     </script>
     <script src="https://kit.fontawesome.com/5ced3d7c26.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <script src="js/main.js"></script>
-    
+
 </body>
 </html>

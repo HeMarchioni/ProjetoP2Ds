@@ -5,15 +5,15 @@ package com.P2Ds.model.Funcionario;
 
 public class Funcionario {
 
-    private Long cd_Cliente;
+    private int cd_Funcionario;
     private String cd_Cpf,nm_Funcionario,ds_Cargo,ds_Email,ds_Endereco,ds_Cidade,sg_Uf,cd_Cep,cd_Telefone,cd_Senha,authority;
     private boolean enabled;
 
     public Funcionario() {
     }
 
-    public Funcionario(Long cd_Cliente, String cd_Cpf, String nm_Funcionario, String ds_Cargo, String ds_Email, String ds_Endereco, String ds_Cidade, String sg_Uf, String cd_Cep, String cd_Telefone, String cd_Senha, String authority, boolean enabled) {
-        this.cd_Cliente = cd_Cliente;
+    public Funcionario(int cd_Funcionario, String cd_Cpf, String nm_Funcionario, String ds_Cargo, String ds_Email, String ds_Endereco, String ds_Cidade, String sg_Uf, String cd_Cep, String cd_Telefone, String cd_Senha, String authority, boolean enabled) {
+        this.cd_Funcionario = cd_Funcionario;
         this.cd_Cpf = cd_Cpf;
         this.nm_Funcionario = nm_Funcionario;
         this.ds_Cargo = ds_Cargo;
@@ -28,12 +28,30 @@ public class Funcionario {
         this.enabled = enabled;
     }
 
-    public Long getCd_Cliente() {
-        return cd_Cliente;
+    public Funcionario(int cd_Funcionario, String cd_Cpf, String nm_Funcionario, String ds_Cargo, String ds_Email, String ds_Endereco, String ds_Cidade, String sg_Uf, String cd_Cep, String cd_Telefone, String authority, boolean enabled) {
+        this.cd_Funcionario = cd_Funcionario;
+        this.cd_Cpf = cd_Cpf;
+        this.nm_Funcionario = nm_Funcionario;
+        this.ds_Cargo = ds_Cargo;
+        this.ds_Email = ds_Email;
+        this.ds_Endereco = ds_Endereco;
+        this.ds_Cidade = ds_Cidade;
+        this.sg_Uf = sg_Uf;
+        this.cd_Cep = cd_Cep;
+        this.cd_Telefone = cd_Telefone;
+        this.authority = authority;
+        this.enabled = enabled;
     }
 
-    public void setCd_Cliente(Long cd_Cliente) {
-        this.cd_Cliente = cd_Cliente;
+
+
+
+    public int getCd_Funcinario() {
+        return cd_Funcionario;
+    }
+
+    public void setCd_Funcionario(int cd_Funcionario) {
+        this.cd_Funcionario = cd_Funcionario;
     }
 
     public String getCd_Cpf() {

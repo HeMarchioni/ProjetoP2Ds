@@ -2,6 +2,7 @@ package com.P2Ds.model.Funcionario;
 
 
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -51,12 +52,41 @@ public class FuncionarioDAO {
     }
 
 
-    public List<Map<String, Object>> getListaFuncionarios() {          // -> pega a lista de todos os Fornecedores cadastrados
+    public List<Map<String, Object>> getListaFuncionarios() {          // -> pega a lista de todos os Funcionarioes cadastrados
         String sql = "SELECT * FROM funcionario";
         List<Map<String, Object>> Funcionarios = (List<Map<String, Object>>) jdbc.queryForList(sql);
         return Funcionarios;
     }
 
+
+    public void deleteFuncionario(int cd_Funcionario) {       // -> apagar funcionario no banco de dados
+        String sql = "DELETE FROM funcionario WHERE cd_Funcionario = ?" ;
+        jdbc.update(sql, new Object[] {cd_Funcionario});
+    }
+
+
+
+    public Map<String, Object> getCd_Funcionario(int cd_Funcionario) {               // -> busca somente pelo codigo
+        String sql = "SELECT * FROM funcionario WHERE cd_Funcionario = ?";
+        return jdbc.queryForMap(sql,new Object[] {cd_Funcionario});
+    }
+
+
+    public void updateFuncionario(int cd_Funcionario, Funcionario funcionario) {   // -> atualizar dados do funcionario no banco
+        String sql = "UPDATE funcionario SET ds_Email = ?, cd_Telefone = ?, cd_Cep = ? , ds_Endereco = ?, ds_Cidade = ?, sg_Uf = ?, ds_Cargo = ?, authority = ?, enabled = ? WHERE cd_Funcionario = ?";
+        jdbc.update(sql, new Object[]{
+                funcionario.getDs_Email(),
+                funcionario.getCd_Telefone(),
+                funcionario.getCd_Cep(),
+                funcionario.getDs_Endereco(),
+                funcionario.getDs_Cidade(),
+                funcionario.getSg_Uf(),
+                funcionario.getDs_Cargo(),
+                funcionario.getAuthority(),
+                funcionario.isEnabled(),
+                cd_Funcionario
+        });
+    }
 
 
 

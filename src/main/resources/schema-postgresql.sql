@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS cliente (
     cd_Cliente serial PRIMARY KEY,
-    cd_Cpf  varchar(14) not null unique,
+    cd_Cpf  varchar(14) not null,
     nm_Cliente  varchar(50),
     ds_Email varchar (150) not null  unique,
     ds_Endereco varchar (200),
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS fornecedor(
 
 CREATE TABLE IF NOT EXISTS funcionario (
     cd_Funcionario serial PRIMARY KEY,
-    cd_Cpf  varchar(14) not null unique,
+    cd_Cpf  varchar(14) not null,
     nm_Funcionario  varchar(50),
     ds_Cargo varchar (100),
     ds_Email varchar (150) not null  unique,
