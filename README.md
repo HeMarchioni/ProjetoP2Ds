@@ -1,10 +1,26 @@
 # Projeto P2 Desenvolvimento para Servidores 
+### Site e Sistema Rede ACME.
 ## Fatec Rubens Lara
 
-- Alunos 
-   - Carlos Eduardo Martins
-   - Cyro Fernandes 
-   - Henrique Marchioni
+- Desenvolvedores 
+   - Carlos Eduardo Martins  - Front End -> https://github.com/carlosemartins97
+
+   - Henrique Marchioni - Back End   -> https://github.com/HeMarchioni
+
+## Tecnologias Utilizadas
+
+- Front End 
+  - HTML + CSS 
+  - JavaScript 
+    - JQuery
+  - Thymeleaf
+
+ - Back End 
+   - Java/Spring Boot + Grandle
+     - Crud completo JDBC
+     - Autenticação e Autorização com Spring Security
+     - Banco de dados PostgreSQL
+
 
 ## Instruções
 - Para ter acesso a área administrativa do site, click em cadastrar
